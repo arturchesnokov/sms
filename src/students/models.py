@@ -42,3 +42,12 @@ class Student(models.Model):
             address=f_profile['address']
         )
         student.save()
+
+class Group(models.Model):
+    group_name = models.CharField(max_length=50)
+    start_date = models.DateField()
+    students_count = models.IntegerField
+    is_active = models.BooleanField
+
+    def get_info(self):
+        return f'{self.group_name} {self.students_count} {self.is_active}'
