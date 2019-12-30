@@ -1,4 +1,6 @@
 from datetime import datetime
+from faker import Faker
+from faker.providers import phone_number, profile
 
 from django.db import models
 
@@ -26,11 +28,17 @@ class Student(models.Model):
 
     @classmethod
     def generate_student(cls):
+        fake = Faker('en_US')
+        fake.add_provider(phone_number)
+        fake.add_provider(profile)
+        f_profile = fake.profile()
+        f_names = f_profile['name'].split(' ')
         student = cls(
-            first_name='D',
-            last_name='K',
-            birth_date=datetime.now().date(),
-            email = 'erwerwerf@gmail.com',
-            telephone = '234234234',
+            first_name=f_names[0],
+            last_name=f_names[1],
+            birth_date=f_profile['birthdate'],
+            email=f_profile['mail'],
+            telephone=fake.phone_number(),
+            address=f_profile['address']
         )
         student.save()
