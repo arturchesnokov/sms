@@ -42,6 +42,12 @@ class Student(models.Model):
             address=f_profile['address']
         )
         student.save()
+        return f"First Name: {student.first_name}" \
+               f"<br />Last Name: {student.last_name}" \
+               f"<br />Birth date: {student.birth_date}" \
+               f"<br />Email: {student.email}" \
+               f"<br />Phone: {student.telephone}" \
+               f"<br />Address: {student.address}"
 
 
 class Group(models.Model):
