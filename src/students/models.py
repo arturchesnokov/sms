@@ -43,11 +43,12 @@ class Student(models.Model):
         )
         student.save()
 
+
 class Group(models.Model):
     group_name = models.CharField(max_length=50)
     start_date = models.DateField()
-    students_count = models.IntegerField
-    is_active = models.BooleanField
+    students_count = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=False)
 
     def get_info(self):
         return f'{self.group_name} {self.students_count} {self.is_active}'
