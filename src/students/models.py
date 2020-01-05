@@ -24,7 +24,13 @@ class Student(models.Model):
     address = models.CharField(max_length=255, null=True, blank=True)
 
     def get_info(self):
-        return f'{self.first_name} {self.last_name} {self.birth_date}'
+        return f"First Name: {self.first_name}" \
+               f"<br />Last Name: {self.last_name}" \
+               f"<br />Birth date: {self.birth_date}" \
+               f"<br />Email: {self.email}" \
+               f"<br />Phone: {self.telephone}" \
+               f"<br />Address: {self.address}"
+
 
     @classmethod
     def generate_student(cls):
@@ -32,22 +38,16 @@ class Student(models.Model):
         fake.add_provider(phone_number)
         fake.add_provider(profile)
         f_profile = fake.profile()
-        f_names = f_profile['name'].split(' ')
         student = cls(
-            first_name=f_names[0],
-            last_name=f_names[1],
+            first_name=fake.first_name(),
+            last_name=fake.last_name(),
             birth_date=f_profile['birthdate'],
-            email=f_profile['mail'],
+            email=fake.email(),
             telephone=fake.phone_number(),
-            address=f_profile['address']
+            address=fake.address()
         )
         student.save()
-        return f"First Name: {student.first_name}" \
-               f"<br />Last Name: {student.last_name}" \
-               f"<br />Birth date: {student.birth_date}" \
-               f"<br />Email: {student.email}" \
-               f"<br />Phone: {student.telephone}" \
-               f"<br />Address: {student.address}"
+        return student
 
 
 class Group(models.Model):

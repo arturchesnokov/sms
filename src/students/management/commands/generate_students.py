@@ -6,7 +6,18 @@ from students.models import Student
 class Command(BaseCommand):
     help = 'Creates 100 fake students'
 
+    def add_arguments(self, parser):
+        parser.add_arguments(
+            '--number',
+            help='Creates 100 fake students',
+        )
+
     def handle(self, *args, **options):
-        for i in range(100):
+        # from pdb import set_trace
+        # set_trace()
+        number = int(options.get('numbers') or 100)
+        for _ in range(number):
             Student.generate_student()
+
+
 

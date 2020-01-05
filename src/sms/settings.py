@@ -114,29 +114,29 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGGING = {
-     'version': 1,
-     'disable_existing_loggers': False,
-     'formatters': {
-         'verbose': {
-             'format': '%(asctime)s-%(module)s-%(levelname)s :: %(message)s'
-         },
-         'simple': {
-             'format': '%(levelname)s :: %(message)s'
-         }
-     },
-     'handlers': {
-           'console': {
-             'level': 'DEBUG',
-             'class': 'logging.StreamHandler',
-             'formatter': 'verbose'
-         },
-     },
-     'loggers': {
-         'django': {
-             'handlers': ['console'],
-             'propagate': False,
-             'level': 'DEBUG'
-         },
-     }
- }
+# LOGGING = {
+#      'version': 1,
+#      'disable_existing_loggers': False,
+#      'formatters': {
+#          'verbose': {
+#              'format': '%(asctime)s-%(module)s-%(levelname)s :: %(message)s'
+#          },
+#          'simple': {
+#              'format': '%(levelname)s :: %(message)s'
+#          }
+#      },
+#      'handlers': {
+#            'console': {
+#              'level': 'DEBUG',
+#              'class': 'logging.StreamHandler',
+#              'formatter': 'verbose'
+#          },
+#      },
+#      'loggers': {
+#          'django': {
+#              'handlers': ['console'],
+#              'propagate': False,
+#              'level': 'DEBUG'
+#          },
+#      }
+#  }
