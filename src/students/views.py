@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Student
+from .models import Student, Group
 
 
 def generate_student(request):
@@ -13,14 +13,19 @@ def students(request):
     queryset = Student.objects.all()
     response = ''
 
-    f_name = request.GET.get('first_name')
-    if f_name:
-    # __contains -> LIKE %{}%
-        #queryset = queryset.filter(first_name__contains=f_name)
-    # __endswith -> LIKE {}%
-        #queryset = queryset.filter(first_name__endswith=f_name)
-    # __startswith -> LIKE %{}
-        queryset = queryset.filter(first_name__startswith=f_name)
+    name = request.GET.get('first_name')
+    if name:
+        from django.db.models import Q
+        queryset = queryset.filter(Q(first_name__contains=name) |
+                                   Q(last_name__contains=name) |
+                                   Q(email__contains=name))
+
+        # __contains -> LIKE %{}%
+        # queryset = queryset.filter(first_name__contains=f_name)
+        # __endswith -> LIKE {}%
+        # queryset = queryset.filter(first_name__endswith=f_name)
+        # __startswith -> LIKE %{}
+        # queryset = queryset.filter(first_name__startswith=f_name)
 
     print(queryset.query)
 
@@ -29,3 +34,30 @@ def students(request):
     return render(request,
                   'students_list.html',
                   context={'students_list': response})
+
+
+def generate_group(request):
+    group = Group.generate_group()
+    return HttpResponse(group.get_info())
+
+
+def groups(request):
+    queryset = Group.objects.all()
+    response = ''
+
+    g_name = request.GET.get('g_name')
+    if g_name:
+        # __contains -> LIKE %{}%
+        queryset = queryset.filter(group_name__contains=g_name)
+        # __endswith -> LIKE {}%
+        # queryset = queryset.filter(first_name__endswith=f_name)
+        # __startswith -> LIKE %{}
+        # queryset = queryset.filter(first_name__startswith=f_name)
+
+    print(queryset.query)
+
+    for group in queryset:
+        response += group.get_info() + '<br>'
+    return render(request,
+                  'groups_list.html',
+                  context={'groups_list': response})

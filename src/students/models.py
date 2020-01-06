@@ -31,7 +31,6 @@ class Student(models.Model):
                f"<br />Phone: {self.telephone}" \
                f"<br />Address: {self.address}"
 
-
     @classmethod
     def generate_student(cls):
         fake = Faker('en_US')
@@ -58,3 +57,15 @@ class Group(models.Model):
 
     def get_info(self):
         return f'{self.group_name} {self.students_count} {self.is_active}'
+
+    @classmethod
+    def generate_group(cls):
+        fake = Faker('en_US')
+        group = cls(
+            group_name=fake.bothify(text="??##", letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+            start_date=fake.date_between(start_date="-1y", end_date="today"),
+            students_count=fake.random_int(min=1, max=20, step=1),
+            is_active=fake.boolean(chance_of_getting_true=70)
+        )
+        group.save()
+        return group
