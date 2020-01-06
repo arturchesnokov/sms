@@ -4,18 +4,16 @@ from students.models import Student
 
 
 class Command(BaseCommand):
-    help = 'Creates 100 fake students'
+    help = 'Generate random students'
 
     def add_arguments(self, parser):
-        parser.add_arguments(
+        parser.add_argument(
             '--number',
-            help='Creates 100 fake students',
+            help='Delete poll instead of closing it',
         )
 
     def handle(self, *args, **options):
-        # from pdb import set_trace
-        # set_trace()
-        number = int(options.get('numbers') or 100)
+        number = int(options.get('number') or 100)
         for _ in range(number):
             Student.generate_student()
 
