@@ -56,7 +56,10 @@ class Group(models.Model):
     is_active = models.BooleanField(default=False)
 
     def get_info(self):
-        return f'{self.group_name} {self.students_count} {self.is_active}'
+        return f'<br>Group:{self.group_name} ' \
+               f'<br>Students count:{self.students_count} ' \
+               f'<br>is Activ:{self.is_active}' \
+               f'<br>Start date:{self.start_date}'
 
     @classmethod
     def generate_group(cls):
@@ -69,3 +72,5 @@ class Group(models.Model):
         )
         group.save()
         return group
+
+
