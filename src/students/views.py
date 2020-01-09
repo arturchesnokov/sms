@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.db.models import Q
 
 from .models import Student, Group
 
@@ -15,7 +16,6 @@ def students(request):
 
     name = request.GET.get('first_name')
     if name:
-        from django.db.models import Q
         queryset = queryset.filter(Q(first_name__contains=name) |
                                    Q(last_name__contains=name) |
                                    Q(email__contains=name))
