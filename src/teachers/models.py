@@ -3,8 +3,6 @@ from django.db import models
 from faker import Faker
 from faker.providers import phone_number, profile
 
-from django.db import models
-
 
 class Teacher(models.Model):
     first_name = models.CharField(max_length=20)
