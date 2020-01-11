@@ -1,4 +1,3 @@
-from datetime import datetime
 from faker import Faker
 from faker.providers import phone_number, profile
 
@@ -72,5 +71,3 @@ class Group(models.Model):
         )
         group.save()
         return group
-
-
