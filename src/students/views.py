@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.db.models import Q
 
 from .models import Student, Group
-from students.forms import StudentsAddForm
+from students.forms import StudentsAddForm, GroupsAddForm
 
 
 def generate_student(request):
@@ -75,4 +75,17 @@ def add_student(request):
 
     return render(request,
                   'add_student.html',
+                  context={'form': form})
+
+
+def add_group(request):
+    if request.method == 'POST':
+        form = GroupsAddForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/groups/')
+    else:
+        form = GroupsAddForm()
+    return render(request,
+                  'add_group.html',
                   context={'form': form})
