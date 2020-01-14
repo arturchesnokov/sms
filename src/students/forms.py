@@ -30,3 +30,9 @@ class ContactForm(Form):
         recipient_list = [settings.EMAIL_HOST_USER]
 
         send_mail(subject, message, email_from, recipient_list)
+
+        with open('mail_log.txt', 'a') as mail_log:
+            mail_log.write(f'Email: {email_from}\n'
+                           f'Subject: {subject}\n'
+                           f'Message: {message}\n\n')
+            mail_log.close()

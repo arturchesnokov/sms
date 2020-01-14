@@ -5,7 +5,7 @@ from students.views import (generate_student, students, generate_group, groups,
                             students_add, add_group, students_edit, contact)
 
 urlpatterns = [
-    path('gen/', generate_student),
+    path('gen/', generate_student, name='students-generate'),
     path('list/', students, name='students'),
     path('add/', students_add, name='students-add'),
     path('edit/<int:pk>/', students_edit, name='students-edit'),
