@@ -33,7 +33,7 @@ def students(request):
     print(queryset.query)
 
     for student in queryset:
-        response += student.get_info() + '<br><br>'
+        response += f'<a href="{reverse("students-edit", args=[student.pk])}">' + student.get_info() + '</a><br><br>'
     return render(request,
                   'students_list.html',
                   context={'students_list': response})
@@ -85,7 +85,7 @@ def groups(request):
     print(queryset.query)
 
     for group in queryset:
-        response += group.get_info() + '<br>'
+        response += group.get_info_as_link(f'<a href="{reverse("groups-edit", args=[group.pk])}">') + '<br>'
     return render(request,
                   'groups_list.html',
                   context={'groups_list': response})

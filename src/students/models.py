@@ -51,6 +51,13 @@ class Group(models.Model):
                f'<br>is Activ:{self.is_active}' \
                f'<br>Start date:{self.start_date}'
 
+    # only first string is a link for edit item
+    def get_info_as_link(self, link):
+        return f'<br>{link}Group:{self.group_name}</a> ' \
+               f'<br>Students count:{self.students_count} ' \
+               f'<br>is Activ:{self.is_active}' \
+               f'<br>Start date:{self.start_date}'
+
     @classmethod
     def generate_group(cls):
         fake = Faker('en_US')

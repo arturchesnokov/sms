@@ -22,7 +22,7 @@ def teachers(request):
     print(queryset.query)
 
     for teacher in queryset:
-        response += teacher.get_info() + '<br><br>'
+        response += f'<a href="{reverse("teachers-edit", args=[teacher.pk])}">' + teacher.get_info() + '</a><br><br>'
     return render(request,
                   'teachers_list.html',
                   context={'teachers_list': response})

@@ -23,7 +23,7 @@ class ContactForm(Form):
     text = CharField()
 
     def save(self):
-        data = self.cleaned_data # validated data
+        data = self.cleaned_data  # validated data
         subject = data['subject']
         message = data['text']
         email_from = data['email']
