@@ -7,6 +7,7 @@ from .models import Student, Group
 from students.forms import StudentsAddForm, GroupsAddForm, ContactForm
 
 
+# Student methods
 def generate_student(request):
     student = Student.generate_student()
     return HttpResponse(student.get_info())
@@ -38,6 +39,36 @@ def students(request):
                   context={'students_list': response})
 
 
+def students_add(request):
+    if request.method == 'POST':
+        form = StudentsAddForm(request.POST)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = StudentsAddForm()  # отображаем форму
+
+    return render(request, 'students_add.html', context={'form': form})
+
+
+def students_edit(request, pk):
+    try:
+        student = Student.objects.get(id=pk)
+    except Student.DoesNotExist:
+        return HttpResponseNotFound(f'Student with id {pk} not found')
+
+    if request.method == 'POST':
+        form = StudentsAddForm(request.POST, instance=student)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = StudentsAddForm(instance=student)  # отображаем форму
+
+    return render(request, 'students_edit.html', context={'form': form, 'pk': pk})
+
+
+# Group methods
 def generate_group(request):
     group = Group.generate_group()
     return HttpResponse(group.get_info())
@@ -60,18 +91,37 @@ def groups(request):
                   context={'groups_list': response})
 
 
-def students_add(request):
+def groups_add(request):
     if request.method == 'POST':
-        form = StudentsAddForm(request.POST)  # обрабатываем данные
+        form = GroupsAddForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('students'))
+            return HttpResponseRedirect(reverse('groups'))
     else:
-        form = StudentsAddForm()  # отображаем форму
+        form = GroupsAddForm()
+    return render(request,
+                  'groups_add.html',
+                  context={'form': form})
 
-    return render(request, 'add_student.html', context={'form': form})
+
+def groups_edit(request, pk):
+    try:
+        group = Group.objects.get(id=pk)
+    except Group.DoesNotExist:
+        return HttpResponseNotFound(f'Group with id {pk} not found')
+
+    if request.method == 'POST':
+        form = GroupsAddForm(request.POST, instance=group)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('groups'))
+    else:
+        form = GroupsAddForm(instance=group)  # отображаем форму
+
+    return render(request, 'groups_edit.html', context={'form': form, 'pk': pk})
 
 
+# Contact form methods
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)  # обрабатываем данные
@@ -82,33 +132,3 @@ def contact(request):
         form = ContactForm()  # отображаем форму
 
     return render(request, 'contact.html', context={'form': form})
-
-
-def students_edit(request, pk):
-    try:
-        student = Student.objects.get(id=pk)
-    except Student.DoesNotExist:
-        return HttpResponseNotFound(f'Student with id {pk} not found')
-
-    if request.method == 'POST':
-        form = StudentsAddForm(request.POST, instance=student)  # обрабатываем данные
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('students'))
-    else:
-        form = StudentsAddForm(instance=student)  # отображаем форму
-
-    return render(request, 'students_edit.html', context={'form': form, 'pk': pk})
-
-
-def add_group(request):
-    if request.method == 'POST':
-        form = GroupsAddForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/groups/')
-    else:
-        form = GroupsAddForm()
-    return render(request,
-                  'add_group.html',
-                  context={'form': form})

@@ -3,15 +3,6 @@ from faker.providers import phone_number, profile
 
 from django.db import models
 
-'''
-CREATE TABLE students_student(
-first_name varchar(20)
-last_name varchar(20)
-birth_date
-email
-phone
-'''
-
 
 class Student(models.Model):
     first_name = models.CharField(max_length=20)
