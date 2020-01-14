@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Student</title>
+    <title>Edit Student</title>
 </head>
 <body>
 <div width=150>
-    <p>Add student:</p>
-    <form action="{% url 'students-add' %}" method="post">
+    <p>Edit student:</p>
+    <form action="{% url 'students-edit' pk %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input name="submit" type="submit">

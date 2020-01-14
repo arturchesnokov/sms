@@ -1,9 +1,10 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
 from django.db.models import Q
+from django.urls import reverse
 
 from .models import Student, Group
-from students.forms import StudentsAddForm, GroupsAddForm
+from students.forms import StudentsAddForm, GroupsAddForm, ContactForm
 
 
 def generate_student(request):
@@ -50,11 +51,6 @@ def groups(request):
     if g_name:
         # __contains -> LIKE %{}%
         queryset = queryset.filter(group_name__contains=g_name)
-        # __endswith -> LIKE {}%
-        # queryset = queryset.filter(first_name__endswith=f_name)
-        # __startswith -> LIKE %{}
-        # queryset = queryset.filter(first_name__startswith=f_name)
-
     print(queryset.query)
 
     for group in queryset:
@@ -64,18 +60,45 @@ def groups(request):
                   context={'groups_list': response})
 
 
-def add_student(request):
+def students_add(request):
     if request.method == 'POST':
         form = StudentsAddForm(request.POST)  # обрабатываем данные
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/students/')
+            return HttpResponseRedirect(reverse('students'))
     else:
         form = StudentsAddForm()  # отображаем форму
 
-    return render(request,
-                  'add_student.html',
-                  context={'form': form})
+    return render(request, 'add_student.html', context={'form': form})
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = ContactForm()  # отображаем форму
+
+    return render(request, 'contact.html', context={'form': form})
+
+
+def students_edit(request, pk):
+    try:
+        student = Student.objects.get(id=pk)
+    except Student.DoesNotExist:
+        return HttpResponseNotFound(f'Student with id {pk} not found')
+
+    if request.method == 'POST':
+        form = StudentsAddForm(request.POST, instance=student)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = StudentsAddForm(instance=student)  # отображаем форму
+
+    return render(request, 'students_edit.html', context={'form': form, 'pk': pk})
 
 
 def add_group(request):
