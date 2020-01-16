@@ -7,6 +7,7 @@ from .models import Student, Group
 from students.forms import StudentsAddForm, GroupsAddForm, ContactForm
 
 
+# Student methods
 def generate_student(request):
     student = Student.generate_student()
     return HttpResponse(student.get_info())
@@ -32,32 +33,10 @@ def students(request):
     print(queryset.query)
 
     for student in queryset:
-        response += student.get_info() + '<br><br>'
+        response += f'<a href="{reverse("students-edit", args=[student.pk])}">' + student.get_info() + '</a><br><br>'
     return render(request,
                   'students_list.html',
                   context={'students_list': response})
-
-
-def generate_group(request):
-    group = Group.generate_group()
-    return HttpResponse(group.get_info())
-
-
-def groups(request):
-    queryset = Group.objects.all()
-    response = ''
-
-    g_name = request.GET.get('g_name')
-    if g_name:
-        # __contains -> LIKE %{}%
-        queryset = queryset.filter(group_name__contains=g_name)
-    print(queryset.query)
-
-    for group in queryset:
-        response += group.get_info() + '<br>'
-    return render(request,
-                  'groups_list.html',
-                  context={'groups_list': response})
 
 
 def students_add(request):
@@ -69,19 +48,7 @@ def students_add(request):
     else:
         form = StudentsAddForm()  # отображаем форму
 
-    return render(request, 'add_student.html', context={'form': form})
-
-
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)  # обрабатываем данные
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('students'))
-    else:
-        form = ContactForm()  # отображаем форму
-
-    return render(request, 'contact.html', context={'form': form})
+    return render(request, 'students_add.html', context={'form': form})
 
 
 def students_edit(request, pk):
@@ -101,14 +68,67 @@ def students_edit(request, pk):
     return render(request, 'students_edit.html', context={'form': form, 'pk': pk})
 
 
-def add_group(request):
+# Group methods
+def generate_group(request):
+    group = Group.generate_group()
+    return HttpResponse(group.get_info())
+
+
+def groups(request):
+    queryset = Group.objects.all()
+    response = ''
+
+    g_name = request.GET.get('g_name')
+    if g_name:
+        # __contains -> LIKE %{}%
+        queryset = queryset.filter(group_name__contains=g_name)
+    print(queryset.query)
+
+    for group in queryset:
+        response += group.get_info_as_link(f'<a href="{reverse("groups-edit", args=[group.pk])}">') + '<br>'
+    return render(request,
+                  'groups_list.html',
+                  context={'groups_list': response})
+
+
+def groups_add(request):
     if request.method == 'POST':
         form = GroupsAddForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/groups/')
+            return HttpResponseRedirect(reverse('groups'))
     else:
         form = GroupsAddForm()
     return render(request,
-                  'add_group.html',
+                  'groups_add.html',
                   context={'form': form})
+
+
+def groups_edit(request, pk):
+    try:
+        group = Group.objects.get(id=pk)
+    except Group.DoesNotExist:
+        return HttpResponseNotFound(f'Group with id {pk} not found')
+
+    if request.method == 'POST':
+        form = GroupsAddForm(request.POST, instance=group)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('groups'))
+    else:
+        form = GroupsAddForm(instance=group)  # отображаем форму
+
+    return render(request, 'groups_edit.html', context={'form': form, 'pk': pk})
+
+
+# Contact form methods
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = ContactForm()  # отображаем форму
+
+    return render(request, 'contact.html', context={'form': form})

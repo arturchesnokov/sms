@@ -3,15 +3,6 @@ from faker.providers import phone_number, profile
 
 from django.db import models
 
-'''
-CREATE TABLE students_student(
-first_name varchar(20)
-last_name varchar(20)
-birth_date
-email
-phone
-'''
-
 
 class Student(models.Model):
     first_name = models.CharField(max_length=20)
@@ -56,6 +47,13 @@ class Group(models.Model):
 
     def get_info(self):
         return f'<br>Group:{self.group_name} ' \
+               f'<br>Students count:{self.students_count} ' \
+               f'<br>is Activ:{self.is_active}' \
+               f'<br>Start date:{self.start_date}'
+
+    # only first string is a link for edit item
+    def get_info_as_link(self, link):
+        return f'<br>{link}Group:{self.group_name}</a> ' \
                f'<br>Students count:{self.students_count} ' \
                f'<br>is Activ:{self.is_active}' \
                f'<br>Start date:{self.start_date}'

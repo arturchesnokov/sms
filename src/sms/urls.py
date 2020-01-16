@@ -16,11 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from teachers.views import generate_teacher, teachers, add_teacher
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', include('students.urls')),
-    path('teachers/', teachers),
-    path('teachers/add/', add_teacher),
+    path('teachers/', include('teachers.urls')),
 ]

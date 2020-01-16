@@ -23,10 +23,16 @@ class ContactForm(Form):
     text = CharField()
 
     def save(self):
-        data = self.cleaned_data # validated data
+        data = self.cleaned_data  # validated data
         subject = data['subject']
         message = data['text']
         email_from = data['email']
         recipient_list = [settings.EMAIL_HOST_USER]
 
         send_mail(subject, message, email_from, recipient_list)
+
+        with open('mail_log.txt', 'a') as mail_log:
+            mail_log.write(f'Email: {email_from}\n'
+                           f'Subject: {subject}\n'
+                           f'Message: {message}\n\n')
+            mail_log.close()
