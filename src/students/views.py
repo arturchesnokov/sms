@@ -15,28 +15,17 @@ def generate_student(request):
 
 def students(request):
     queryset = Student.objects.all()
-    response = ''
 
     name = request.GET.get('first_name')
     if name:
         queryset = queryset.filter(Q(first_name__contains=name) |
                                    Q(last_name__contains=name) |
                                    Q(email__contains=name))
-
-        # __contains -> LIKE %{}%
-        # queryset = queryset.filter(first_name__contains=f_name)
-        # __endswith -> LIKE {}%
-        # queryset = queryset.filter(first_name__endswith=f_name)
-        # __startswith -> LIKE %{}
-        # queryset = queryset.filter(first_name__startswith=f_name)
-
-    print(queryset.query)
-
-    for student in queryset:
-        response += f'<a href="{reverse("students-edit", args=[student.pk])}">' + student.get_info() + '</a><br><br>'
+    # for student in queryset:
+    #     response += f'<a href="{reverse("students-edit", args=[student.pk])}">' + student.get_info() + '</a><br><br>'
     return render(request,
                   'students_list.html',
-                  context={'students_list': response})
+                  context={'students': queryset})
 
 
 def students_add(request):
