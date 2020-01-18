@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teachers list</title>
-</head>
-<body>
-<form action="/teachers/" method="get">
+{% extends 'base.html' %}
+
+{% block title %} Teachers List {% endblock %}
+
+{% block content%}
+<form action="{% url 'teachers' %}" method="get">
     <input name="first_name">
     <input name="submit" type="submit">
 </form>
 <br>
-<button onclick="document.location='./add/'">Add teacher</button>
+<button onclick="document.location='{% url 'teachers-add' %}'">Add teacher</button>
 <br><br>
-{{ teachers_list|safe }}
 
-</body>
-</html>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Birth date</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+
+{% for teacher in teachers %}
+    <tr>
+        <td><a href="{% url 'teachers-edit' teacher.id %}">{{ teacher.id }}</a></td>
+        <td>{{ teacher.first_name }}</td>
+        <td>{{ teacher.last_name }}</td>
+        <td>{{ teacher.birth_date }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>{{ teacher.telephone }}</td>
+        <td>{{ teacher.address }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock content%}

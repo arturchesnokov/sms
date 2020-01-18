@@ -1,18 +1,37 @@
 {% extends 'base.html' %}
 
+{% block title %} Students list {% endblock %}
+
 {% block content%}
-<form action="/students/" method="get">
+<form action="{% url 'students' %}" method="get">
     <input name="first_name">
     <input name="submit" type="submit">
 </form>
 <br>
-<button onclick="document.location='./add/'">Add student</button>
+<button onclick="document.location='{% url 'students-add' %}'">Add student</button>
 <br><br>
 
-{% for student in students %}
-<a href="{% url 'students-edit' student.id %}">{{student.first_name}} {{ student.last_name }}</a>  {{ student.email }}
-<br>
-{% endfor %}
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Birth date</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
 
-{# students_list|safe #}
+{% for student in students %}
+    <tr>
+        <td><a href="{% url 'students-edit' student.id %}">{{ student.id }}</a></td>
+        <td>{{ student.first_name}}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.birth_date }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.telephone }}</td>
+        <td>{{ student.address }}</td>
+    </tr>
+{% endfor %}
+</table>
 {% endblock content%}

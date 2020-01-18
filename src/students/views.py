@@ -21,8 +21,6 @@ def students(request):
         queryset = queryset.filter(Q(first_name__contains=name) |
                                    Q(last_name__contains=name) |
                                    Q(email__contains=name))
-    # for student in queryset:
-    #     response += f'<a href="{reverse("students-edit", args=[student.pk])}">' + student.get_info() + '</a><br><br>'
     return render(request,
                   'students_list.html',
                   context={'students': queryset})
@@ -65,7 +63,6 @@ def generate_group(request):
 
 def groups(request):
     queryset = Group.objects.all()
-    response = ''
 
     g_name = request.GET.get('g_name')
     if g_name:
@@ -73,11 +70,9 @@ def groups(request):
         queryset = queryset.filter(group_name__contains=g_name)
     print(queryset.query)
 
-    for group in queryset:
-        response += group.get_info_as_link(f'<a href="{reverse("groups-edit", args=[group.pk])}">') + '<br>'
     return render(request,
                   'groups_list.html',
-                  context={'groups_list': response})
+                  context={'groups': queryset})
 
 
 def groups_add(request):
