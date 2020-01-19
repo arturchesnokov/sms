@@ -14,6 +14,7 @@
 <table>
   <tr>
     <th>ID</th>
+    <th>Group</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Birth date</th>
@@ -25,6 +26,7 @@
 {% for student in students %}
     <tr>
         <td><a href="{% url 'students-edit' student.id %}">{{ student.id }}</a></td>
+        <td>{{ student.group.group_name}}</td>
         <td>{{ student.first_name}}</td>
         <td>{{ student.last_name }}</td>
         <td>{{ student.birth_date }}</td>
