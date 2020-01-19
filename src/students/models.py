@@ -27,7 +27,7 @@ class Student(models.Model):
                f"<br />Email: {self.email}" \
                f"<br />Phone: {self.telephone}" \
                f"<br />Address: {self.address}" \
-               #f"<br />Group: {self.group.group_name}"
+            # f"<br />Group: {self.group.group_name}"
 
     @classmethod
     def generate_student(cls):
@@ -35,7 +35,7 @@ class Student(models.Model):
         fake.add_provider(phone_number)
         fake.add_provider(profile)
         f_profile = fake.profile()
-        #groups_list = list(Group.objects.all())
+        # groups_list = list(Group.objects.all())
         student = cls(
             first_name=fake.first_name(),
             last_name=fake.last_name(),
@@ -43,7 +43,7 @@ class Student(models.Model):
             email=fake.email(),
             telephone=fake.phone_number(),
             address=fake.address(),
-            #group=random.choice(groups_list)
+            # group=random.choice(groups_list)
         )
         student.save()
         return student
@@ -77,15 +77,15 @@ class Group(models.Model):
     @classmethod
     def generate_group(cls):
         fake = Faker('en_US')
-        #teachers = list(Teacher.objects.all())
-        #students = list(Student.objects.all())
+        # teachers = list(Teacher.objects.all())
+        # students = list(Student.objects.all())
         group = cls(
             group_name=fake.bothify(text="??##", letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
             start_date=fake.date_between(start_date="-1y", end_date="today"),
             students_count=fake.random_int(min=1, max=20, step=1),
             is_active=fake.boolean(chance_of_getting_true=70),
-            #praepostor=random.choice(students),
-            #curator=random.choice(teachers)
+            # praepostor=random.choice(students),
+            # curator=random.choice(teachers)
         )
         group.save()
         return group
