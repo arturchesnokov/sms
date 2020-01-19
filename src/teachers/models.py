@@ -5,12 +5,12 @@ from faker.providers import phone_number, profile
 
 
 class Teacher(models.Model):
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
     birth_date = models.DateField()
     email = models.EmailField()
     # add avatar TODO
-    telephone = models.CharField(max_length=16)  # clean phone TODO
+    telephone = models.CharField(max_length=25)  # clean phone TODO
     address = models.CharField(max_length=255, null=True, blank=True)
 
     def get_info(self):
