@@ -53,9 +53,10 @@ class Group(models.Model):
                                    related_name='head_of_group',
                                    null=True, blank=True,
                                    on_delete=models.CASCADE)
+
     curator = models.ForeignKey(Teacher,
-                                   null=True, blank=True,
-                                   on_delete=models.CASCADE)
+                                null=True, blank=True,
+                                on_delete=models.CASCADE)
 
     def get_info(self):
         return f'<br>Group:{self.group_name} ' \
