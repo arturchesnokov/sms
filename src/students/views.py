@@ -68,7 +68,6 @@ def groups(request):
     if g_name:
         # __contains -> LIKE %{}%
         queryset = queryset.filter(group_name__contains=g_name)
-    print(queryset.query)
 
     return render(request,
                   'groups_list.html',

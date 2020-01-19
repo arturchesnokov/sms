@@ -3,6 +3,8 @@ from faker.providers import phone_number, profile
 
 from django.db import models
 
+from teachers.models import Teacher
+
 
 class Student(models.Model):
     first_name = models.CharField(max_length=25)
@@ -47,6 +49,13 @@ class Group(models.Model):
     start_date = models.DateField()
     students_count = models.IntegerField(default=0)
     is_active = models.BooleanField(default=False)
+    praepostor = models.ForeignKey(Student,
+                                   related_name='head_of_group',
+                                   null=True, blank=True,
+                                   on_delete=models.CASCADE)
+    curator = models.ForeignKey(Teacher,
+                                   null=True, blank=True,
+                                   on_delete=models.CASCADE)
 
     def get_info(self):
         return f'<br>Group:{self.group_name} ' \
