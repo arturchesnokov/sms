@@ -13,19 +13,14 @@ def generate_teacher(request):
 
 def teachers(request):
     queryset = Teacher.objects.all()
-    response = ''
 
     f_name = request.GET.get('first_name')
     if f_name:
         queryset = queryset.filter(first_name__startswith=f_name)
 
-    print(queryset.query)
-
-    for teacher in queryset:
-        response += f'<a href="{reverse("teachers-edit", args=[teacher.pk])}">' + teacher.get_info() + '</a><br><br>'
     return render(request,
                   'teachers_list.html',
-                  context={'teachers_list': response})
+                  context={'teachers': queryset})
 
 
 def teachers_add(request):

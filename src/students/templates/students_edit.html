@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %} Students Edit {% endblock %}
 {% block content%}
 <p>Edit student:</p>
 <form action="{% url 'students-edit' pk %}" method="post">
