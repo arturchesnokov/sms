@@ -1,3 +1,5 @@
+import random
+
 from faker import Faker
 from faker.providers import phone_number, profile
 
@@ -24,7 +26,8 @@ class Student(models.Model):
                f"<br />Birth date: {self.birth_date}" \
                f"<br />Email: {self.email}" \
                f"<br />Phone: {self.telephone}" \
-               f"<br />Address: {self.address}"
+               f"<br />Address: {self.address}" \
+               #f"<br />Group: {self.group.group_name}"
 
     @classmethod
     def generate_student(cls):
@@ -32,13 +35,15 @@ class Student(models.Model):
         fake.add_provider(phone_number)
         fake.add_provider(profile)
         f_profile = fake.profile()
+        #groups_list = list(Group.objects.all())
         student = cls(
             first_name=fake.first_name(),
             last_name=fake.last_name(),
             birth_date=f_profile['birthdate'],
             email=fake.email(),
             telephone=fake.phone_number(),
-            address=fake.address()
+            address=fake.address(),
+            #group=random.choice(groups_list)
         )
         student.save()
         return student
@@ -65,23 +70,25 @@ class Group(models.Model):
         return f'<br>Group:{self.group_name} ' \
                f'<br>Students count:{self.students_count} ' \
                f'<br>is Activ:{self.is_active}' \
-               f'<br>Start date:{self.start_date}'
-
-    # only first string is a link for edit item
-    def get_info_as_link(self, link):
-        return f'<br>{link}Group:{self.group_name}</a> ' \
-               f'<br>Students count:{self.students_count} ' \
-               f'<br>is Activ:{self.is_active}' \
-               f'<br>Start date:{self.start_date}'
+               f'<br>Start date:{self.start_date}' \
+               f'<br>Curator:{self.curator} ' \
+               f'<br>Praepostor:{self.praepostor} '
 
     @classmethod
     def generate_group(cls):
         fake = Faker('en_US')
+        #teachers = list(Teacher.objects.all())
+        #students = list(Student.objects.all())
         group = cls(
             group_name=fake.bothify(text="??##", letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
             start_date=fake.date_between(start_date="-1y", end_date="today"),
             students_count=fake.random_int(min=1, max=20, step=1),
-            is_active=fake.boolean(chance_of_getting_true=70)
+            is_active=fake.boolean(chance_of_getting_true=70),
+            #praepostor=random.choice(students),
+            #curator=random.choice(teachers)
         )
         group.save()
         return group
+
+    def __str__(self):
+        return self.group_name
