@@ -84,16 +84,6 @@ WSGI_APPLICATION = 'sms.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pvwcwuau',
-        'USER': 'pvwcwuau',
-        'PASSWORD': '92ONpSNIfV9rAyFJPlwyyGL7SVZRqeZg',
-        'HOST': 'packy.db.elephantsql.com',
-        'PORT': '5432',
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -131,15 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'achesn.info@gmail.com'
-EMAIL_HOST_PASSWORD = 'xKvRkgryFTpV'
-
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
+try:
+    from sms.settings_local import *
+except ImportError:
+    print('settings_local module not found!')

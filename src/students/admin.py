@@ -1,3 +1,18 @@
 from django.contrib import admin
 
-# Register your models here.
+from students.models import Student
+
+
+class StudentAdmin(admin.ModelAdmin):
+    readonly_fields = ('email', 'telephone')
+    list_display = ('id', 'first_name', 'last_name', 'email', 'group')
+    list_select_related = ('group',)
+    list_per_page = 10
+
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name='manager').exists():
+            return ('email', 'telephone')
+        return ()
+
+
+admin.site.register(Student, StudentAdmin)
