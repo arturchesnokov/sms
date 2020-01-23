@@ -62,13 +62,12 @@ def generate_group(request):
 
 
 def groups(request):
-    queryset = Group.objects.all()
+    queryset = Group.objects.all().select_related('praepostor', 'curator')
 
     g_name = request.GET.get('g_name')
     if g_name:
         # __contains -> LIKE %{}%
         queryset = queryset.filter(group_name__contains=g_name)
-    print(queryset.query)
 
     return render(request,
                   'groups_list.html',
