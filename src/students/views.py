@@ -62,7 +62,7 @@ def generate_group(request):
 
 
 def groups(request):
-    queryset = Group.objects.all()
+    queryset = Group.objects.all().select_related('praepostor', 'curator')
 
     g_name = request.GET.get('g_name')
     if g_name:
