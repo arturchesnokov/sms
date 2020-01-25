@@ -15,11 +15,17 @@ class StudentAdmin(admin.ModelAdmin):
         return ()
 
 
+class StudentInline(admin.TabularInline):
+    model = Student
+
+
 class GroupAdmin(admin.ModelAdmin):
     # readonly_fields = ('email', 'telephone')
     list_display = ('id', 'group_name', 'is_active', 'start_date', 'curator', 'praepostor')
     list_select_related = ('curator', 'praepostor')
     list_per_page = 10
+    inlines = [StudentInline, ]
+
 
 admin.site.register(Student, StudentAdmin)
 
