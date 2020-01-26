@@ -8,9 +8,9 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     birth_date = models.DateField()
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     # add avatar TODO
-    telephone = models.CharField(max_length=25)  # clean phone TODO
+    telephone = models.CharField(unique=True, max_length=25)
     address = models.CharField(max_length=255, null=True, blank=True)
 
     def get_info(self):
