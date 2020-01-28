@@ -8,7 +8,7 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = ('id', 'first_name', 'last_name', 'email', 'group')
     list_select_related = ('group',)
     list_per_page = 10
-    #  form = StudentAdminForm
+    form = StudentAdminForm
 
     def get_readonly_fields(self, request, obj=None):
         if request.user.groups.filter(name='manager').exists():

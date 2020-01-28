@@ -10,6 +10,6 @@ def only_numbers(st):
 @receiver(pre_save, sender=Teacher)
 def pre_save_teacher(sender, instance, **kwargs):
     instance.email = instance.email.lower()
-    instance.first_name = instance.first_name.lower().capitalize()
-    instance.last_name = instance.last_name.lower().capitalize()
+    instance.first_name = instance.first_name.strip().lower().capitalize()
+    instance.last_name = instance.last_name.strip().lower().capitalize()
     instance.telephone = only_numbers(instance.telephone)
