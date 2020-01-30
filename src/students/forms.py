@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from students.models import Student, Group
+from students.tasks import send_email_async
 
 
 class BaseStudentForm(ModelForm):
@@ -49,7 +50,10 @@ class ContactForm(Form):
         email_from = data['email']
         recipient_list = [settings.EMAIL_HOST_USER]
 
-        send_mail(subject, message, email_from, recipient_list)
+        # student = Student.objects.get_or_create(email = email_from)[0]
+
+        # send_mail(subject, message, email_from, recipient_list)
+        send_email_async.delay(subject, message, email_from, recipient_list)
 
         with open('mail_log.txt', 'a') as mail_log:
             mail_log.write(f'Email: {email_from}\n'
