@@ -1,4 +1,4 @@
-from django.test import TestCase, SimpleTestCase
+from django.test import TestCase
 from django.test import Client
 from django.urls import reverse
 
@@ -24,11 +24,11 @@ class StudentListTestResponse(TestCase):
         self.assertEqual(response.status_code, 200, msg='students page response status - FAIL')
 
         students_list = response.context['students']
-        # print(response.context['students'])
+        print(response.context['students'])
         # print(response.content)
 
         qs_students = Student.objects.all()
-        # print(f'QS: {qs_students}')
+        print(f'QS: {qs_students}')
 
         self.assertQuerysetEqual(qs_students, students_list)  # TODO почему контекст и QS пустой?
 
