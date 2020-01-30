@@ -5,22 +5,30 @@ from django.conf import settings
 from students.models import Student, Group
 
 
-class StudentsAddForm(ModelForm):
+class BaseStudentForm(ModelForm):
+
+    def clean_email(self):
+        email = self.cleaned_data['email'].lower()
+        email_exists = Student.objects. \
+            filter(email__iexact=email). \
+            exclude(id=self.instance.id). \
+            exists()
+        if email_exists:
+            raise ValidationError(f'Email {email} is already used')
+        return email
+
+
+class StudentsAddForm(BaseStudentForm):
     class Meta:
         model = Student
         fields = '__all__'
 
 
-class StudentAdminForm(ModelForm):
+class StudentAdminForm(BaseStudentForm):
     class Meta:
         model = Student
-        fields = ('id', 'email', 'first_name', 'last_name')
-
-    def clean_email(self):
-        email = self.cleaned_data['email'].lower()
-        if Student.objects.filter(email__iexact=email).exists():
-            raise ValidationError(f'{email} already used!')
-        return email
+        # fields = '__all__'
+        fields = ('id', 'email', 'first_name', 'last_name', 'telephone')
 
 
 class GroupsAddForm(ModelForm):
