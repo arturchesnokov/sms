@@ -5,6 +5,17 @@ from django.urls import reverse
 from students.models import Student
 
 
+class TestContact(TestCase):
+
+    def test_form(self):
+        data = {
+            'email': 'test+123@',
+            'subject': 'subject test',
+            'text': 'text test'
+        }
+        response = self.client.post(reverse('contact'), data)
+
+
 class StudentListTestResponse(TestCase):
 
     def test_response_code(self):
