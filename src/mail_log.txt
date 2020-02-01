@@ -39,3 +39,108 @@ please folow the link to confirm your email:
 http://127.0.0.1:8000/students/confirm/197/
 
 
+Email: test+56451@mail.com
+Subject: test subject
+Message: test text
+
+Email: test+506665@mail.com
+Subject: test subject
+Message: test text
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+432172@mail.com
+Subject: test subject
+Message: test text
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123456@mail.com
+Subject: test subject
+Message: test text
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123456@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+891831@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+889534@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+352151@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+

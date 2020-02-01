@@ -9,11 +9,36 @@ class TestContact(TestCase):
 
     def test_form(self):
         data = {
-            'email': 'test+123@',
+            'email': 'test+123@mail.com',
             'subject': 'subject test',
             'text': 'text test'
         }
         response = self.client.post(reverse('contact'), data)
+        assert response.status_code == 302
+
+        data['email'] = 'WRONG'
+        response = self.client.post(reverse('contact'), data)
+        assert response.status_code == 200
+
+
+class TestReg(TestCase):
+    def test_reg_form(self):
+        test_email = f'test+123@mail.com'
+        data = {
+            'email': test_email,
+        }
+        response = self.client.post(reverse('reg-form'), data)
+        assert response.status_code == 302  # form check
+
+        student = Student.objects.get(email=test_email)
+
+        assert student.email == test_email  # student has been created
+
+        assert student.is_enabled == False  # default status of created student
+
+        response = self.client.get(reverse('students-confirm', args=[student.pk]))
+        student = Student.objects.get(email=test_email)
+        assert student.is_enabled == True
 
 
 class StudentListTestResponse(TestCase):
@@ -24,11 +49,11 @@ class StudentListTestResponse(TestCase):
         self.assertEqual(response.status_code, 200, msg='students page response status - FAIL')
 
         students_list = response.context['students']
-        print(response.context['students'])
+        # print(response.context['students'])
         # print(response.content)
 
         qs_students = Student.objects.all()
-        print(f'QS: {qs_students}')
+        # print(f'QS: {qs_students}')
 
         self.assertQuerysetEqual(qs_students, students_list)  # TODO почему контекст и QS пустой?
 
