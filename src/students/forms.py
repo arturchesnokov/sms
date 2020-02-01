@@ -64,7 +64,6 @@ class ContactForm(Form):
 
         # student = Student.objects.get_or_create(email = email_from)[0]
 
-        # send_mail(subject, message, email_from, recipient_list)
         send_email_async.delay(subject, message, email_from, recipient_list)
 
         with open('mail_log.txt', 'a') as mail_log:
@@ -102,7 +101,6 @@ class RegForm(Form):
         # TODO insert absolute url, not hardcode
         # f'{request.build_absolute_uri(reverse("students-edit", args=[student.pk]))}'
 
-        # send_mail(subject, message, email_from, recipient_list)
         send_email_async.delay(subject, message, email_from, recipient_list)
 
         with open('mail_log.txt', 'a') as mail_log:
