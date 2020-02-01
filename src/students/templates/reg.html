@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Reg Form {% endblock %}
+{% block content%}
+    <p>Registration:</p>
+    <form action="{% url 'reg-form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input name="submit" type="submit">
+    </form>
+{% endblock content%}

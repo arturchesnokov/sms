@@ -6,3 +6,36 @@ Email: artur.chesnokov@gmail.com
 Subject: Subject
 Message: some text
 
+Email: a123@gf.com
+Subject: s1
+Message: t2
+
+Email: tes2@ref.com
+Subject: Subject text from RegForm
+Message: Message Text from RegForm
+
+Email: fdfdf@dfdfd.com
+Subject: Subject text from RegForm
+Message: Message Text from RegForm
+ id:194
+
+Email: qwe12@ere.com
+Subject: Registration confirmation
+Message: Hello, you need to finsih account regisrtation,
+please folow the link to confirm your email:
+http:///students/edit/195/
+
+Email: new23@asd.com
+Subject: Registration confirmation
+Message: Hello, you need to finsih account regisrtation,
+please folow the link to confirm your email:
+http://127.0.0.1:8000/students/edit/196/
+
+
+Email: test33@ttt.com
+Subject: Registration confirmation
+Message: Hello, you need to finsih account regisrtation,
+please folow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/197/
+
+
