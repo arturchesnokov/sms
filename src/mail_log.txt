@@ -144,3 +144,14 @@ please follow the link to confirm your email:
 http://127.0.0.1:8000/students/confirm/1/
 
 
+Email: test+123@mail.com
+Subject: subject test
+Message: text test
+
+Email: test+123@mail.com
+Subject: Registration confirmation
+Message: Hello, you need to finish account registration,
+please follow the link to confirm your email:
+http://127.0.0.1:8000/students/confirm/1/
+
+
