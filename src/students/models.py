@@ -11,7 +11,7 @@ from teachers.models import Teacher
 class Student(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    birth_date = models.DateField()
+    birth_date = models.DateField(default='01/01/1980')
     email = models.EmailField(unique=True)
     # add avatar TODO
     telephone = models.CharField(unique=True, max_length=25)

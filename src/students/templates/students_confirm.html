@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Profile Edit {% endblock %}
+{% block content%}
+<p>Please fill in empty fields:</p>
+<form action="{% url 'students-confirm' pk %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input name="submit" type="submit">
+</form>
+{% endblock content%}
