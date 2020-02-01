@@ -6,4 +6,5 @@ env/
 .DS_Store
 .idea/
 settings_local.py
+src/mail_log.txt
 
