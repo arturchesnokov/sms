@@ -19,9 +19,9 @@ class Student(models.Model):
     group = models.ForeignKey('students.Group',
                               null=True, blank=True,
                               on_delete=models.CASCADE)
-    username = models.CharField(unique=True, max_length=25)
+    username = models.CharField(unique=True, max_length=25, default='')
     password = models.CharField(max_length=25, default='111111')
-    is_Enabled = models.BooleanField(default=False)
+    is_enabled = models.BooleanField(default=False)
 
     def get_info(self):
         return f"First Name: {self.first_name}" \
