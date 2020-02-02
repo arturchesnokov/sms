@@ -1,0 +1,2435 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "students",
+      "model": "student"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "students",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "teachers",
+      "model": "teacher"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 92,
+    "fields": {
+      "first_name": "Andrea",
+      "last_name": "Daugherty",
+      "birth_date": "1961-03-02",
+      "email": "lisa22@yahoo.com",
+      "telephone": "30796099130759",
+      "address": "36604 Amy Turnpike Apt. 090\nSmithshire, KS 98801",
+      "group": 13,
+      "username": "lisa22",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 93,
+    "fields": {
+      "first_name": "Anthony",
+      "last_name": "Franklin",
+      "birth_date": "1985-01-11",
+      "email": "catherine62@gmail.com",
+      "telephone": "3551901981",
+      "address": "4035 Torres Pike Suite 925\nNorth Keithborough, SC 86328",
+      "group": 17,
+      "username": "catherine62",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 94,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Williams",
+      "birth_date": "1917-08-08",
+      "email": "elizabeth41@yahoo.com",
+      "telephone": "8624267550834",
+      "address": "7505 David Forks Suite 303\nNew Lindseytown, WA 22425",
+      "group": 18,
+      "username": "elizabeth41",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 95,
+    "fields": {
+      "first_name": "Brandi",
+      "last_name": "Bautista",
+      "birth_date": "1987-10-25",
+      "email": "tanyaburton@flynn.net",
+      "telephone": "9639937403",
+      "address": "PSC 5496, Box 2071\nAPO AA 16735",
+      "group": 17,
+      "username": "tanyaburton",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 96,
+    "fields": {
+      "first_name": "Jane",
+      "last_name": "Clark",
+      "birth_date": "1991-09-10",
+      "email": "meganramos@gmail.com",
+      "telephone": "5748082062",
+      "address": "44794 Black Shoal\nVanessashire, CT 18260",
+      "group": 15,
+      "username": "meganramos",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 97,
+    "fields": {
+      "first_name": "Hannah",
+      "last_name": "Hart",
+      "birth_date": "1999-06-03",
+      "email": "salaskaitlyn@hotmail.com",
+      "telephone": "3900138496",
+      "address": "PSC 2541, Box 1020\nAPO AE 39741",
+      "group": 17,
+      "username": "salaskaitlyn",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 98,
+    "fields": {
+      "first_name": "Stephanie",
+      "last_name": "Johnson",
+      "birth_date": "1999-01-29",
+      "email": "tracyrosales@payne.org",
+      "telephone": "6099508300",
+      "address": "606 Hammond Island Apt. 225\nAvilaborough, DE 49399",
+      "group": 13,
+      "username": "tracyrosales",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 99,
+    "fields": {
+      "first_name": "Brianna",
+      "last_name": "Garcia",
+      "birth_date": "2016-11-10",
+      "email": "xbrown@gmail.com",
+      "telephone": "14002028090684",
+      "address": "66487 Dorsey Mountains\nLake James, WA 24452",
+      "group": 11,
+      "username": "xbrown",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 100,
+    "fields": {
+      "first_name": "Charles",
+      "last_name": "Bennett",
+      "birth_date": "1982-09-18",
+      "email": "wnicholson@hotmail.com",
+      "telephone": "3811437226",
+      "address": "497 Zachary Mission\nMarshalltown, ID 17302",
+      "group": 11,
+      "username": "wnicholson",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 101,
+    "fields": {
+      "first_name": "Richard",
+      "last_name": "Jackson",
+      "birth_date": "1915-08-04",
+      "email": "mcconnellsarah@yahoo.com",
+      "telephone": "1278713397820420",
+      "address": "613 Eric Circle\nEast Amanda, KY 57690",
+      "group": 17,
+      "username": "mcconnellsarah",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 102,
+    "fields": {
+      "first_name": "Kathleen",
+      "last_name": "Pearson",
+      "birth_date": "1950-09-13",
+      "email": "kirbydiana@yahoo.com",
+      "telephone": "001986568622236983",
+      "address": "3780 Wilson Circles\nSouth Katherinehaven, MO 50525",
+      "group": 14,
+      "username": "kirbydiana",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 103,
+    "fields": {
+      "first_name": "Shawn",
+      "last_name": "Lewis",
+      "birth_date": "1931-11-02",
+      "email": "banderson@gibson-schwartz.info",
+      "telephone": "173500601300187",
+      "address": "9787 Jones Causeway Apt. 937\nMorrisfort, NV 22759",
+      "group": 13,
+      "username": "banderson",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 104,
+    "fields": {
+      "first_name": "Dylan",
+      "last_name": "Sims",
+      "birth_date": "1967-02-08",
+      "email": "blakedeanna@gmail.com",
+      "telephone": "131399761508086",
+      "address": "9710 Gloria Groves Suite 043\nCharlesberg, GA 27908",
+      "group": 14,
+      "username": "blakedeanna",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 105,
+    "fields": {
+      "first_name": "Mindy",
+      "last_name": "Owens",
+      "birth_date": "1997-02-21",
+      "email": "sarah81@yahoo.com",
+      "telephone": "1511607164",
+      "address": "4887 Micheal Way Apt. 867\nNew Davidfort, AR 66456",
+      "group": 14,
+      "username": "sarah81",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 106,
+    "fields": {
+      "first_name": "Anne",
+      "last_name": "Williams",
+      "birth_date": "1975-02-12",
+      "email": "unash@mckay.com",
+      "telephone": "0019656245595096",
+      "address": "USS Cox\nFPO AA 04735",
+      "group": 14,
+      "username": "unash",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 107,
+    "fields": {
+      "first_name": "Joseph",
+      "last_name": "Walker",
+      "birth_date": "1941-02-26",
+      "email": "arodriguez@yahoo.com",
+      "telephone": "823054556435453",
+      "address": "98239 Jones Islands Apt. 466\nLake Michelle, KY 77671",
+      "group": 16,
+      "username": "arodriguez",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 108,
+    "fields": {
+      "first_name": "Leslie",
+      "last_name": "Reeves",
+      "birth_date": "1951-08-29",
+      "email": "joseph06@gmail.com",
+      "telephone": "6608849347298",
+      "address": "741 James Mountain Suite 704\nRomerobury, ND 58288",
+      "group": 13,
+      "username": "joseph06",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 109,
+    "fields": {
+      "first_name": "Luke",
+      "last_name": "Ross",
+      "birth_date": "2017-06-29",
+      "email": "perezmariah@johnson-moore.com",
+      "telephone": "158741055851402",
+      "address": "86931 Michelle Locks\nEast Jenniferville, KS 12173",
+      "group": 19,
+      "username": "perezmariah",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 110,
+    "fields": {
+      "first_name": "Ryan",
+      "last_name": "Travis",
+      "birth_date": "1954-10-10",
+      "email": "nancy45@lopez.com",
+      "telephone": "3956483715",
+      "address": "1435 Blevins Knoll Apt. 762\nSouth Alanview, VT 75900",
+      "group": 12,
+      "username": "nancy45",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 111,
+    "fields": {
+      "first_name": "Jennifer",
+      "last_name": "Savage",
+      "birth_date": "2005-09-08",
+      "email": "dana39@rogers-alvarez.info",
+      "telephone": "3352870525",
+      "address": "2304 Erin Corner\nBeverlyview, CA 41618",
+      "group": 19,
+      "username": "dana39",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 112,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "White",
+      "birth_date": "1974-12-24",
+      "email": "zdavis@gmail.com",
+      "telephone": "00137643715278948",
+      "address": "1649 Jessica Shores\nGordonshire, MD 68935",
+      "group": 16,
+      "username": "zdavis",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 113,
+    "fields": {
+      "first_name": "Kristin",
+      "last_name": "Butler",
+      "birth_date": "1982-07-01",
+      "email": "rebeccaduncan@moore.com",
+      "telephone": "6467597163",
+      "address": "472 Brian Ridge\nNew Alisonfurt, WV 16424",
+      "group": 14,
+      "username": "rebeccaduncan",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 114,
+    "fields": {
+      "first_name": "Dawn",
+      "last_name": "Mann",
+      "birth_date": "1951-08-30",
+      "email": "jennifer10@gmail.com",
+      "telephone": "0467648290",
+      "address": "22169 Bonilla Plaza\nChaneyberg, MN 75213",
+      "group": 19,
+      "username": "jennifer10",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 115,
+    "fields": {
+      "first_name": "Mark",
+      "last_name": "Fisher",
+      "birth_date": "1993-04-07",
+      "email": "hernandezashley@gmail.com",
+      "telephone": "4842981899",
+      "address": "28609 Perkins Cliff Suite 943\nThompsonborough, WY 25752",
+      "group": 19,
+      "username": "hernandezashley",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 116,
+    "fields": {
+      "first_name": "Crystal",
+      "last_name": "Lamb",
+      "birth_date": "1948-08-28",
+      "email": "stephenroberts@roman-gregory.biz",
+      "telephone": "35090806614363",
+      "address": "1000 Hill Camp\nNorth Carriemouth, WI 22503",
+      "group": 11,
+      "username": "stephenroberts",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 117,
+    "fields": {
+      "first_name": "Cory",
+      "last_name": "Lee",
+      "birth_date": "1941-11-19",
+      "email": "martinezdeborah@hotmail.com",
+      "telephone": "0708716813",
+      "address": "04521 Lin Islands Suite 593\nJohnborough, KY 22065",
+      "group": 11,
+      "username": "martinezdeborah",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 118,
+    "fields": {
+      "first_name": "Kevin",
+      "last_name": "Wright",
+      "birth_date": "1931-12-09",
+      "email": "thomaspamela@hotmail.com",
+      "telephone": "2270906173",
+      "address": "046 Thompson Ramp\nEdwardsland, WA 27642",
+      "group": 12,
+      "username": "thomaspamela",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 119,
+    "fields": {
+      "first_name": "Laurie",
+      "last_name": "Cruz",
+      "birth_date": "1946-04-06",
+      "email": "rjones@miller.com",
+      "telephone": "696268662155324",
+      "address": "997 Sean Causeway\nMackville, AZ 12585",
+      "group": 11,
+      "username": "rjones",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 120,
+    "fields": {
+      "first_name": "Sarah",
+      "last_name": "Adams",
+      "birth_date": "1935-09-09",
+      "email": "christophermedina@thomas-powell.info",
+      "telephone": "0018647110145898",
+      "address": "9745 Boyd Lock\nEast Brandy, WA 67414",
+      "group": 12,
+      "username": "christophermedina",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 121,
+    "fields": {
+      "first_name": "Karen",
+      "last_name": "Nguyen",
+      "birth_date": "1904-10-11",
+      "email": "johnalvarez@baker.com",
+      "telephone": "3904363201",
+      "address": "6286 Todd Knolls Suite 086\nNorth Jeffrey, NJ 40490",
+      "group": 13,
+      "username": "johnalvarez",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 122,
+    "fields": {
+      "first_name": "Eric",
+      "last_name": "Nguyen",
+      "birth_date": "1950-01-20",
+      "email": "cole55@hotmail.com",
+      "telephone": "7413971747880",
+      "address": "5718 Holder Cape\nEast Chadmouth, VA 77259",
+      "group": 15,
+      "username": "cole55",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 123,
+    "fields": {
+      "first_name": "Jessica",
+      "last_name": "Henderson",
+      "birth_date": "1962-05-14",
+      "email": "harrisonpaul@gmail.com",
+      "telephone": "10354792360",
+      "address": "26457 Jessica Well\nNorth Sarah, MA 20401",
+      "group": 13,
+      "username": "harrisonpaul",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 124,
+    "fields": {
+      "first_name": "Kimberly",
+      "last_name": "Smith",
+      "birth_date": "1956-01-17",
+      "email": "arnoldsusan@smith.org",
+      "telephone": "17899664555",
+      "address": "PSC 7567, Box 7695\nAPO AP 61320",
+      "group": 16,
+      "username": "arnoldsusan",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 125,
+    "fields": {
+      "first_name": "Marc",
+      "last_name": "Mitchell",
+      "birth_date": "2002-06-09",
+      "email": "yjimenez@lewis-byrd.com",
+      "telephone": "2280532180",
+      "address": "633 Rivera Mill\nLake Thomaston, MI 56619",
+      "group": 14,
+      "username": "yjimenez",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 126,
+    "fields": {
+      "first_name": "Matthew",
+      "last_name": "Zamora",
+      "birth_date": "1988-01-26",
+      "email": "lisa55@hotmail.com",
+      "telephone": "6139515532",
+      "address": "82794 Michael Overpass Apt. 175\nWest Maryborough, WY 13201",
+      "group": 13,
+      "username": "lisa55",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 127,
+    "fields": {
+      "first_name": "Dylan",
+      "last_name": "Webb",
+      "birth_date": "1997-05-08",
+      "email": "wesleymiddleton@charles.org",
+      "telephone": "9782443272219",
+      "address": "511 Brittany Valleys Apt. 844\nWest Christopherberg, TN 29814",
+      "group": 17,
+      "username": "wesleymiddleton",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 128,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Harris",
+      "birth_date": "1955-09-09",
+      "email": "walter21@hotmail.com",
+      "telephone": "9810742645",
+      "address": "5955 Lawson Shoal Suite 759\nLake Jeffrey, OK 62883",
+      "group": 16,
+      "username": "walter21",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 129,
+    "fields": {
+      "first_name": "Anthony",
+      "last_name": "Williams",
+      "birth_date": "1910-05-14",
+      "email": "juliasantana@hotmail.com",
+      "telephone": "554767507434460",
+      "address": "74116 Alexandra Hollow Suite 668\nNew Colleen, MO 23658",
+      "group": 16,
+      "username": "juliasantana",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 130,
+    "fields": {
+      "first_name": "Ryan",
+      "last_name": "Lewis",
+      "birth_date": "1992-07-31",
+      "email": "qarmstrong@adkins.com",
+      "telephone": "732240872988292",
+      "address": "USS King\nFPO AE 21352",
+      "group": 12,
+      "username": "qarmstrong",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 131,
+    "fields": {
+      "first_name": "Scott",
+      "last_name": "Mcdaniel",
+      "birth_date": "2015-07-21",
+      "email": "johnsondiana@hotmail.com",
+      "telephone": "855876084047827",
+      "address": "06555 James Heights Suite 768\nHarrisfurt, DC 41066",
+      "group": 16,
+      "username": "johnsondiana",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 132,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Thomas",
+      "birth_date": "1934-12-22",
+      "email": "justinkelley@davis.com",
+      "telephone": "45775888912172",
+      "address": "339 Tina Knoll Suite 244\nWest Lawrenceberg, HI 85922",
+      "group": 15,
+      "username": "justinkelley",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 133,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Harrison",
+      "birth_date": "1976-06-30",
+      "email": "burnsgrant@hotmail.com",
+      "telephone": "0015730286940",
+      "address": "2285 Nancy Circles Suite 248\nWest Jasonport, HI 41951",
+      "group": 11,
+      "username": "burnsgrant",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 134,
+    "fields": {
+      "first_name": "Paul",
+      "last_name": "Brown",
+      "birth_date": "2008-07-29",
+      "email": "marcusbrown@rodriguez.com",
+      "telephone": "13068930580369",
+      "address": "4970 Gomez Path\nTammyside, MA 63513",
+      "group": 12,
+      "username": "marcusbrown",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 135,
+    "fields": {
+      "first_name": "Larry",
+      "last_name": "Torres",
+      "birth_date": "1941-09-01",
+      "email": "matthewcoleman@barrett.com",
+      "telephone": "1306514077510258",
+      "address": "558 Perez Key\nNorth Matthewstad, MS 15415",
+      "group": 11,
+      "username": "matthewcoleman",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 136,
+    "fields": {
+      "first_name": "Matthew",
+      "last_name": "Elliott",
+      "birth_date": "1979-06-08",
+      "email": "hallsonya@yahoo.com",
+      "telephone": "4432846745164",
+      "address": "65752 Latoya Circles\nLopeztown, NC 69939",
+      "group": 16,
+      "username": "hallsonya",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 137,
+    "fields": {
+      "first_name": "Troy",
+      "last_name": "Forbes",
+      "birth_date": "1982-01-06",
+      "email": "andrea61@huerta.com",
+      "telephone": "0019611432568",
+      "address": "7029 Montes Lakes Apt. 688\nSouth Mark, KY 28809",
+      "group": 20,
+      "username": "andrea61",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 138,
+    "fields": {
+      "first_name": "Bonnie",
+      "last_name": "Roberts",
+      "birth_date": "1969-11-09",
+      "email": "gregoryangel@hotmail.com",
+      "telephone": "11189200402428",
+      "address": "7491 Gonzalez Path\nSotofurt, NY 56889",
+      "group": 14,
+      "username": "gregoryangel",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 139,
+    "fields": {
+      "first_name": "Sara",
+      "last_name": "Baker",
+      "birth_date": "1919-02-25",
+      "email": "gsmith@yahoo.com",
+      "telephone": "12906123924",
+      "address": "328 Mark Ramp Suite 290\nEdwardmouth, MD 91910",
+      "group": 14,
+      "username": "gsmith",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 140,
+    "fields": {
+      "first_name": "Evan",
+      "last_name": "Baird",
+      "birth_date": "1964-07-26",
+      "email": "clarkashley@gmail.com",
+      "telephone": "9462044104",
+      "address": "1613 Lambert Parkways\nNorth Jenniferside, GA 11928",
+      "group": 19,
+      "username": "clarkashley",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 141,
+    "fields": {
+      "first_name": "Mary",
+      "last_name": "White",
+      "birth_date": "1934-01-10",
+      "email": "alexis44@bowman.net",
+      "telephone": "0087107956",
+      "address": "961 Baker Walks Suite 277\nWest Robertburgh, NC 83102",
+      "group": 17,
+      "username": "alexis44",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 142,
+    "fields": {
+      "first_name": "Randall",
+      "last_name": "Thomas",
+      "birth_date": "1932-09-10",
+      "email": "hollymaldonado@cameron-walton.com",
+      "telephone": "90233042312101",
+      "address": "5148 Watts Parks\nNew Heather, MO 76755",
+      "group": 14,
+      "username": "hollymaldonado",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 143,
+    "fields": {
+      "first_name": "Ryan",
+      "last_name": "Alvarado",
+      "birth_date": "1908-03-22",
+      "email": "newmantara@atkins.com",
+      "telephone": "50172834733719",
+      "address": "667 Dominguez Union\nPopeville, MT 21156",
+      "group": 15,
+      "username": "newmantara",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 144,
+    "fields": {
+      "first_name": "Sarah",
+      "last_name": "Schmidt",
+      "birth_date": "1961-11-25",
+      "email": "tkelly@burns.com",
+      "telephone": "7045678123",
+      "address": "97772 Katie Isle\nLake Denise, AL 39319",
+      "group": 14,
+      "username": "tkelly",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 145,
+    "fields": {
+      "first_name": "Shawn",
+      "last_name": "Thompson",
+      "birth_date": "1935-06-05",
+      "email": "joshua27@hotmail.com",
+      "telephone": "3059331881",
+      "address": "3840 Edward Wall\nLake Kimberly, OK 52492",
+      "group": 17,
+      "username": "joshua27",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 146,
+    "fields": {
+      "first_name": "Jonathan",
+      "last_name": "Zimmerman",
+      "birth_date": "1994-02-22",
+      "email": "apham@hotmail.com",
+      "telephone": "3477065764",
+      "address": "USNS Joseph\nFPO AA 95133",
+      "group": 13,
+      "username": "apham",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 147,
+    "fields": {
+      "first_name": "Cathy",
+      "last_name": "Brown",
+      "birth_date": "1949-05-07",
+      "email": "kolson@yahoo.com",
+      "telephone": "01709441364130",
+      "address": "84111 Dean Overpass Apt. 165\nCrystalville, AZ 34208",
+      "group": 11,
+      "username": "kolson",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 148,
+    "fields": {
+      "first_name": "Justin",
+      "last_name": "Hamilton",
+      "birth_date": "1980-07-26",
+      "email": "michael79@gmail.com",
+      "telephone": "5949212148",
+      "address": "6538 Kaitlyn Well Apt. 688\nWellsmouth, WV 20114",
+      "group": 11,
+      "username": "michael79",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 149,
+    "fields": {
+      "first_name": "Megan",
+      "last_name": "Perez",
+      "birth_date": "1958-03-09",
+      "email": "davidbrown@wade-lopez.com",
+      "telephone": "9647504136",
+      "address": "212 Robert Loop Apt. 768\nSouth Keithton, NV 68231",
+      "group": 20,
+      "username": "davidbrown",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 150,
+    "fields": {
+      "first_name": "Luis",
+      "last_name": "Jones",
+      "birth_date": "1986-12-28",
+      "email": "patricia81@yahoo.com",
+      "telephone": "1091511049596",
+      "address": "8401 Clark Mountains Apt. 201\nSouth Amandashire, WA 02482",
+      "group": 20,
+      "username": "patricia81",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 151,
+    "fields": {
+      "first_name": "Jay",
+      "last_name": "Watson",
+      "birth_date": "1975-12-26",
+      "email": "nicholas78@hodge.biz",
+      "telephone": "14482182749515",
+      "address": "76427 Cynthia Orchard Suite 898\nNorth Roseshire, VT 32429",
+      "group": 16,
+      "username": "nicholas78",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 152,
+    "fields": {
+      "first_name": "Jason",
+      "last_name": "Beck",
+      "birth_date": "1958-02-16",
+      "email": "carlsonvincent@bryant.com",
+      "telephone": "3663569103",
+      "address": "96858 Amy Glen Suite 732\nRobinsonland, AK 83204",
+      "group": 20,
+      "username": "carlsonvincent",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 153,
+    "fields": {
+      "first_name": "Julia",
+      "last_name": "Hunter",
+      "birth_date": "2013-10-30",
+      "email": "martinezryan@hotmail.com",
+      "telephone": "037509570959584",
+      "address": "47710 Thomas Station\nTimothyfort, SC 37863",
+      "group": 20,
+      "username": "martinezryan",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 154,
+    "fields": {
+      "first_name": "Dillon",
+      "last_name": "Beck",
+      "birth_date": "1945-01-10",
+      "email": "treed@gaines.biz",
+      "telephone": "1478736831737",
+      "address": "51428 Gabriel Station Apt. 390\nJamesfurt, MT 40373",
+      "group": 11,
+      "username": "treed",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 155,
+    "fields": {
+      "first_name": "Michelle",
+      "last_name": "Rivera",
+      "birth_date": "2001-07-08",
+      "email": "eric03@hotmail.com",
+      "telephone": "3945032411",
+      "address": "PSC 0860, Box 4214\nAPO AE 59135",
+      "group": 12,
+      "username": "eric03",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 156,
+    "fields": {
+      "first_name": "Erin",
+      "last_name": "Clark",
+      "birth_date": "1943-12-01",
+      "email": "wallamy@yahoo.com",
+      "telephone": "0015626947811",
+      "address": "0818 Jason Loop\nCurryfort, MT 36775",
+      "group": 15,
+      "username": "wallamy",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 157,
+    "fields": {
+      "first_name": "Mitchell",
+      "last_name": "Salas",
+      "birth_date": "1910-08-14",
+      "email": "andrew42@armstrong-garcia.info",
+      "telephone": "1228213308804607",
+      "address": "4383 Le Loop\nColestad, DE 57686",
+      "group": 14,
+      "username": "andrew42",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 158,
+    "fields": {
+      "first_name": "Ryan",
+      "last_name": "Thornton",
+      "birth_date": "1981-08-14",
+      "email": "lchristensen@anderson.com",
+      "telephone": "7642148264",
+      "address": "87771 Smith Cove\nWest Edwinton, OH 80676",
+      "group": 16,
+      "username": "lchristensen",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 159,
+    "fields": {
+      "first_name": "Danielle",
+      "last_name": "Martinez",
+      "birth_date": "2007-02-16",
+      "email": "jeffrey16@gmail.com",
+      "telephone": "001971361647159774",
+      "address": "86992 Pope Corner\nWest Cynthiaport, GA 67920",
+      "group": 20,
+      "username": "jeffrey16",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 160,
+    "fields": {
+      "first_name": "Edward",
+      "last_name": "Lawson",
+      "birth_date": "1949-05-10",
+      "email": "cwood@andrews-chapman.com",
+      "telephone": "5939850324",
+      "address": "1528 Edward Common Suite 721\nNorth Jeffreybury, UT 79711",
+      "group": 14,
+      "username": "cwood",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 161,
+    "fields": {
+      "first_name": "Dawn",
+      "last_name": "Lopez",
+      "birth_date": "1910-06-04",
+      "email": "crawfordkelly@hotmail.com",
+      "telephone": "6996232490195",
+      "address": "14606 Steven Views\nCynthiaview, CA 90963",
+      "group": 12,
+      "username": "crawfordkelly",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 162,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Thornton",
+      "birth_date": "1981-07-20",
+      "email": "oscar56@maldonado-phillips.com",
+      "telephone": "4350608776",
+      "address": "59968 Douglas Groves\nNorth Rachelstad, MI 08114",
+      "group": 11,
+      "username": "oscar56",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 163,
+    "fields": {
+      "first_name": "Victoria",
+      "last_name": "Scott",
+      "birth_date": "1956-08-05",
+      "email": "susan65@williamson-huber.com",
+      "telephone": "9396481383",
+      "address": "USCGC Collins\nFPO AA 02991",
+      "group": 11,
+      "username": "susan65",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 164,
+    "fields": {
+      "first_name": "Juan",
+      "last_name": "Sanchez",
+      "birth_date": "1922-08-30",
+      "email": "dsimmons@garcia.info",
+      "telephone": "158302959243764",
+      "address": "26898 Daniel Place Apt. 927\nEast William, HI 16902",
+      "group": 19,
+      "username": "dsimmons",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 165,
+    "fields": {
+      "first_name": "Tamara",
+      "last_name": "Banks",
+      "birth_date": "1991-11-21",
+      "email": "cschneider@hotmail.com",
+      "telephone": "0011396830785470",
+      "address": "3416 Giles Land Suite 057\nMichaelshire, AL 81092",
+      "group": 13,
+      "username": "cschneider",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 166,
+    "fields": {
+      "first_name": "Randy",
+      "last_name": "Morales",
+      "birth_date": "1921-02-12",
+      "email": "rebecca82@cooke-wright.net",
+      "telephone": "17659167613906",
+      "address": "013 Henson Centers Apt. 250\nLake Sandrafurt, OH 80700",
+      "group": 20,
+      "username": "rebecca82",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 167,
+    "fields": {
+      "first_name": "William",
+      "last_name": "Cain",
+      "birth_date": "2005-09-05",
+      "email": "george54@yahoo.com",
+      "telephone": "83522143132778",
+      "address": "5581 Eric Drive Apt. 506\nNorth Sharon, IL 91500",
+      "group": 20,
+      "username": "george54",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 168,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Klein",
+      "birth_date": "1930-05-11",
+      "email": "jonwilliams@hopkins.net",
+      "telephone": "2104922608703",
+      "address": "61676 Stone View Apt. 625\nGomezview, SD 12075",
+      "group": 13,
+      "username": "jonwilliams",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 169,
+    "fields": {
+      "first_name": "Christopher",
+      "last_name": "Blankenship",
+      "birth_date": "1912-12-17",
+      "email": "abigail16@austin.com",
+      "telephone": "00103688761736947",
+      "address": "74602 Michelle Walks\nHuynhfort, MT 57277",
+      "group": 20,
+      "username": "abigail16",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 170,
+    "fields": {
+      "first_name": "Diana",
+      "last_name": "Huerta",
+      "birth_date": "1983-01-21",
+      "email": "inorman@yahoo.com",
+      "telephone": "0794863781",
+      "address": "6603 Maria Junctions\nSarahport, VA 24815",
+      "group": 15,
+      "username": "inorman",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 171,
+    "fields": {
+      "first_name": "Joseph",
+      "last_name": "Wood",
+      "birth_date": "1950-06-22",
+      "email": "stephenallen@hotmail.com",
+      "telephone": "11918480669",
+      "address": "500 Sherry Plains Apt. 170\nElizabethstad, ND 78568",
+      "group": 20,
+      "username": "stephenallen",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 172,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Reyes",
+      "birth_date": "1954-10-26",
+      "email": "mkelley@nixon.info",
+      "telephone": "18567303871565",
+      "address": "723 Jackson Shores\nDerekville, GA 76692",
+      "group": 13,
+      "username": "mkelley",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 173,
+    "fields": {
+      "first_name": "Elizabeth",
+      "last_name": "Rodriguez",
+      "birth_date": "2000-06-12",
+      "email": "ljackson@gmail.com",
+      "telephone": "7912825899",
+      "address": "322 Reeves Tunnel Suite 261\nNew Justinhaven, CA 20672",
+      "group": 18,
+      "username": "ljackson",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 174,
+    "fields": {
+      "first_name": "William",
+      "last_name": "Cowan",
+      "birth_date": "1924-09-05",
+      "email": "mooreelizabeth@hotmail.com",
+      "telephone": "58696218381337",
+      "address": "9730 Reyes Glen\nGabrielside, MO 19968",
+      "group": 14,
+      "username": "mooreelizabeth",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 175,
+    "fields": {
+      "first_name": "Crystal",
+      "last_name": "Johnson",
+      "birth_date": "1964-09-28",
+      "email": "langsarah@yahoo.com",
+      "telephone": "1745964591522625",
+      "address": "967 Lambert Fords Suite 874\nStevenchester, CA 86333",
+      "group": 17,
+      "username": "langsarah",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 176,
+    "fields": {
+      "first_name": "Tina",
+      "last_name": "Ramos",
+      "birth_date": "1918-01-11",
+      "email": "dwarren@hotmail.com",
+      "telephone": "970933020780366",
+      "address": "8222 Jessica Mission\nPhyllisburgh, IN 71555",
+      "group": 12,
+      "username": "dwarren",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 177,
+    "fields": {
+      "first_name": "William",
+      "last_name": "Payne",
+      "birth_date": "1904-09-24",
+      "email": "steven86@yahoo.com",
+      "telephone": "9871810116",
+      "address": "2937 Joseph Shoals Apt. 070\nDouglasside, OK 93331",
+      "group": 16,
+      "username": "steven86",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 178,
+    "fields": {
+      "first_name": "Kristin",
+      "last_name": "Wilson",
+      "birth_date": "1977-01-08",
+      "email": "shannon74@brown-fisher.com",
+      "telephone": "581378427865417",
+      "address": "182 Justin Club Suite 569\nJenniferchester, HI 50871",
+      "group": 13,
+      "username": "shannon74",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 179,
+    "fields": {
+      "first_name": "Phillip",
+      "last_name": "Wang",
+      "birth_date": "1940-12-12",
+      "email": "lindabennett@parks.com",
+      "telephone": "49550656839795",
+      "address": "1330 Peter Rue\nPrincemouth, OH 72299",
+      "group": 12,
+      "username": "lindabennett",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 180,
+    "fields": {
+      "first_name": "Steve",
+      "last_name": "Torres",
+      "birth_date": "1992-03-18",
+      "email": "dylan43@jennings.biz",
+      "telephone": "17312507334",
+      "address": "217 Wells Key Apt. 623\nSouth Michael, FL 29408",
+      "group": 16,
+      "username": "dylan43",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 181,
+    "fields": {
+      "first_name": "Wendy",
+      "last_name": "Patterson",
+      "birth_date": "1931-11-03",
+      "email": "fadkins@gmail.com",
+      "telephone": "19422473873324",
+      "address": "98645 Stephenson Ford Apt. 203\nCherylmouth, PA 74070",
+      "group": 19,
+      "username": "fadkins",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 182,
+    "fields": {
+      "first_name": "Charles",
+      "last_name": "Rogers",
+      "birth_date": "1943-09-20",
+      "email": "ffoster@yahoo.com",
+      "telephone": "746849858961578",
+      "address": "4042 Blake Overpass\nWest Heathermouth, UT 70064",
+      "group": 18,
+      "username": "ffoster",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 183,
+    "fields": {
+      "first_name": "Anthony",
+      "last_name": "Rodriguez",
+      "birth_date": "1963-01-20",
+      "email": "zestrada@orr.com",
+      "telephone": "46599536228310",
+      "address": "1254 Williams Tunnel\nHughestown, DE 99413",
+      "group": 18,
+      "username": "zestrada",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 184,
+    "fields": {
+      "first_name": "Edward",
+      "last_name": "Le",
+      "birth_date": "1975-07-22",
+      "email": "perrymatthew@hotmail.com",
+      "telephone": "3836688130",
+      "address": "7216 Massey Inlet Apt. 861\nLake David, UT 70306",
+      "group": 16,
+      "username": "perrymatthew",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 185,
+    "fields": {
+      "first_name": "Katherine",
+      "last_name": "Fernandez",
+      "birth_date": "1924-07-02",
+      "email": "vhowell@hotmail.com",
+      "telephone": "2969918674",
+      "address": "8455 Brewer Skyway Apt. 850\nMichellebury, IA 12881",
+      "group": 12,
+      "username": "vhowell",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 186,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Kelly",
+      "birth_date": "2009-03-09",
+      "email": "josephzimmerman@yahoo.com",
+      "telephone": "1713645953588267",
+      "address": "6440 Daniel Locks\nPort Adrianaborough, TN 41122",
+      "group": 15,
+      "username": "josephzimmerman",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 187,
+    "fields": {
+      "first_name": "Evelyn",
+      "last_name": "Bailey",
+      "birth_date": "1993-03-22",
+      "email": "johnsonjennifer@yahoo.com",
+      "telephone": "14829078999",
+      "address": "76714 Fuller River\nLake Christine, RI 37808",
+      "group": 13,
+      "username": "johnsonjennifer",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 188,
+    "fields": {
+      "first_name": "Jordan",
+      "last_name": "Vazquez",
+      "birth_date": "1905-12-09",
+      "email": "brittanygarcia@hernandez.biz",
+      "telephone": "23336030722488",
+      "address": "6735 Austin Stravenue Apt. 112\nMargaretberg, AK 87893",
+      "group": 15,
+      "username": "brittanygarcia",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 189,
+    "fields": {
+      "first_name": "Eugene",
+      "last_name": "Taylor",
+      "birth_date": "2004-02-05",
+      "email": "ramseyandrew@williams.com",
+      "telephone": "6186359522",
+      "address": "6765 Christopher Street Suite 545\nChanbury, WV 02325",
+      "group": 20,
+      "username": "ramseyandrew",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 190,
+    "fields": {
+      "first_name": "Angela",
+      "last_name": "Harris",
+      "birth_date": "1914-12-25",
+      "email": "michaelnichols@yahoo.com",
+      "telephone": "1212514910145669",
+      "address": "58504 Lisa Course\nNorth Melindafort, ID 34750",
+      "group": 11,
+      "username": "michaelnichols",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 191,
+    "fields": {
+      "first_name": "Chelsea",
+      "last_name": "Elliott",
+      "birth_date": "2004-01-20",
+      "email": "carolyn82@pope-marshall.biz",
+      "telephone": "9626755782",
+      "address": "43703 Smith Estates\nNew Meganborough, OK 53965",
+      "group": 12,
+      "username": "carolyn82",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 194,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "birth_date": "1980-01-01",
+      "email": "fdfdf@dfdfd.com",
+      "telephone": "6224208",
+      "address": null,
+      "group": null,
+      "username": "fdfdf",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 195,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "birth_date": "1980-01-01",
+      "email": "qwe12@ere.com",
+      "telephone": "6084686",
+      "address": null,
+      "group": null,
+      "username": "qwe12",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 196,
+    "fields": {
+      "first_name": "Alex",
+      "last_name": "Summer",
+      "birth_date": "1980-11-11",
+      "email": "new23@asd.com",
+      "telephone": "8206355",
+      "address": null,
+      "group": 11,
+      "username": "new23",
+      "password": "111111",
+      "is_enabled": true
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 197,
+    "fields": {
+      "first_name": "Eddy",
+      "last_name": "Merphy",
+      "birth_date": "1977-10-10",
+      "email": "test33@ttt.com",
+      "telephone": "2992205",
+      "address": "Some test address",
+      "group": 13,
+      "username": "test33",
+      "password": "111111",
+      "is_enabled": true
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 198,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "birth_date": "1980-01-01",
+      "email": "aasdafdsf@tets.com",
+      "telephone": "7777474",
+      "address": null,
+      "group": null,
+      "username": "aasdafdsf",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 199,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "birth_date": "1980-01-01",
+      "email": "tes123er@te.com",
+      "telephone": "7245845",
+      "address": null,
+      "group": null,
+      "username": "tes123er",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 200,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "birth_date": "1980-01-01",
+      "email": "123wer234@tes.com",
+      "telephone": "8112459",
+      "address": null,
+      "group": null,
+      "username": "123wer234",
+      "password": "111111",
+      "is_enabled": false
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 11,
+    "fields": {
+      "group_name": "BJ72",
+      "start_date": "2019-03-09",
+      "students_count": 18,
+      "is_active": true,
+      "praepostor": 165,
+      "curator": 15
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 12,
+    "fields": {
+      "group_name": "FN80",
+      "start_date": "2019-10-22",
+      "students_count": 18,
+      "is_active": true,
+      "praepostor": 185,
+      "curator": 15
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 13,
+    "fields": {
+      "group_name": "GW91",
+      "start_date": "2019-07-01",
+      "students_count": 1,
+      "is_active": true,
+      "praepostor": 154,
+      "curator": 19
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 14,
+    "fields": {
+      "group_name": "YZ71",
+      "start_date": "2019-09-14",
+      "students_count": 1,
+      "is_active": false,
+      "praepostor": 140,
+      "curator": 12
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 15,
+    "fields": {
+      "group_name": "KI33",
+      "start_date": "2019-09-22",
+      "students_count": 11,
+      "is_active": false,
+      "praepostor": 166,
+      "curator": 12
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 16,
+    "fields": {
+      "group_name": "AY03",
+      "start_date": "2019-04-27",
+      "students_count": 3,
+      "is_active": true,
+      "praepostor": 156,
+      "curator": 15
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 17,
+    "fields": {
+      "group_name": "OT52",
+      "start_date": "2019-04-28",
+      "students_count": 9,
+      "is_active": false,
+      "praepostor": 115,
+      "curator": 13
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 18,
+    "fields": {
+      "group_name": "ZP41",
+      "start_date": "2019-11-14",
+      "students_count": 2,
+      "is_active": true,
+      "praepostor": 154,
+      "curator": 11
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 19,
+    "fields": {
+      "group_name": "GF85",
+      "start_date": "2019-02-13",
+      "students_count": 3,
+      "is_active": true,
+      "praepostor": 132,
+      "curator": 19
+    }
+  },
+  {
+    "model": "students.group",
+    "pk": 20,
+    "fields": {
+      "group_name": "BX87",
+      "start_date": "2019-02-23",
+      "students_count": 10,
+      "is_active": false,
+      "praepostor": 103,
+      "curator": 11
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 11,
+    "fields": {
+      "first_name": "Helen",
+      "last_name": "Adams",
+      "birth_date": "1927-12-10",
+      "email": "markgray@reeves-ross.com",
+      "telephone": "(571)816-2583x819",
+      "address": "194 Deborah Ranch\nNew Kylie, NH 31534"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 12,
+    "fields": {
+      "first_name": "Dawn",
+      "last_name": "Walker",
+      "birth_date": "1930-02-20",
+      "email": "gail67@yahoo.com",
+      "telephone": "(950)117-3748",
+      "address": "7529 James Field\nRebeccaton, CA 18041"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 13,
+    "fields": {
+      "first_name": "Tina",
+      "last_name": "Mason",
+      "birth_date": "1974-10-11",
+      "email": "juansimmons@moreno.net",
+      "telephone": "055-016-5942",
+      "address": "PSC 4959, Box 2990\nAPO AP 62431"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 14,
+    "fields": {
+      "first_name": "Troy",
+      "last_name": "Benson",
+      "birth_date": "1970-04-25",
+      "email": "twatkins@gmail.com",
+      "telephone": "896.838.4392x16197",
+      "address": "8872 Pennington Row Apt. 186\nAngelahaven, WY 09871"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 15,
+    "fields": {
+      "first_name": "Derrick",
+      "last_name": "Aguilar",
+      "birth_date": "1914-05-05",
+      "email": "webbjames@garrett.com",
+      "telephone": "(857)999-9827x9700",
+      "address": "073 Austin Lane\nEast Susan, MO 08927"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 16,
+    "fields": {
+      "first_name": "Terry",
+      "last_name": "Gardner",
+      "birth_date": "2000-08-20",
+      "email": "iwilliams@stanley.net",
+      "telephone": "001-791-402-9733x3124",
+      "address": "Unit 8806 Box 0640\nDPO AE 06122"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 17,
+    "fields": {
+      "first_name": "Jeffrey",
+      "last_name": "Thomas",
+      "birth_date": "1918-10-14",
+      "email": "alexandra77@baker-sanchez.com",
+      "telephone": "001-967-699-0392x43320",
+      "address": "2900 Carter Courts Apt. 481\nSmithmouth, LA 71889"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 18,
+    "fields": {
+      "first_name": "Melanie",
+      "last_name": "Cross",
+      "birth_date": "2018-12-20",
+      "email": "ewilliams@hotmail.com",
+      "telephone": "400-590-9894",
+      "address": "28931 Macias Rest Apt. 398\nNew Ronald, ID 23242"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 19,
+    "fields": {
+      "first_name": "Nancy",
+      "last_name": "Fernandez",
+      "birth_date": "1971-05-06",
+      "email": "ochan@gmail.com",
+      "telephone": "+1-600-975-0063",
+      "address": "098 Jamie Turnpike Suite 336\nLake Teresaland, NY 08661"
+    }
+  },
+  {
+    "model": "teachers.teacher",
+    "pk": 20,
+    "fields": {
+      "first_name": "Thomas",
+      "last_name": "Smith",
+      "birth_date": "1923-12-20",
+      "email": "saunderscrystal@jennings.org",
+      "telephone": "(787)833-3843x755",
+      "address": "83368 Tim Circle\nNorth Carriechester, IL 97704"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add student",
+      "content_type": 7,
+      "codename": "add_student"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change student",
+      "content_type": 7,
+      "codename": "change_student"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete student",
+      "content_type": 7,
+      "codename": "delete_student"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view student",
+      "content_type": 7,
+      "codename": "view_student"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 8,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 8,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 8,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 8,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add teacher",
+      "content_type": 9,
+      "codename": "add_teacher"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change teacher",
+      "content_type": 9,
+      "codename": "change_teacher"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete teacher",
+      "content_type": 9,
+      "codename": "delete_teacher"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view teacher",
+      "content_type": 9,
+      "codename": "view_teacher"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "stud",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$9DRItTlKYJQU$hOkvvQOSiW2bvQkJpHRXK6GZJf9Ll0tdMOu7DpGrAg8=",
+      "last_login": "2020-02-01T22:23:11.182Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@admin.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-02-01T10:53:15.984Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$m2wgaWwIDl6o$xPATl9CSGmZ1ROZFhTKmiD2fq7FQ2JvDgD07N4InC/8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-02-01T21:18:14Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-02-01T21:17:32.605Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "stud",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-02-01T21:18:14.323Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "test",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-02-01T21:18:50.583Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "test",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"groups\"]}}]"
+    }
+  }
+]
