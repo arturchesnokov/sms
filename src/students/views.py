@@ -120,7 +120,7 @@ def contact(request):
 # Reg form methods
 def reg_form(request):
     if request.method == 'POST':
-        form = RegForm(request.POST)  # обрабатываем данные
+        form = RegForm(request.POST, request=request)  # обрабатываем данные
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('students'))
@@ -131,6 +131,7 @@ def reg_form(request):
 
 
 def students_confirm(request, pk):
+    # get_object_or_404
     try:
         student = Student.objects.get(id=pk)
         student.is_enabled = True  # change the status

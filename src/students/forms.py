@@ -70,11 +70,14 @@ class ContactForm(Form):
             mail_log.write(f'Email: {email_from}\n'
                            f'Subject: {subject}\n'
                            f'Message: {message}\n\n')
-            mail_log.close()
 
 
 class RegForm(Form):
     email = EmailField()
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super().__init__(*args, **kwargs)
 
     def save(self):
         data = self.cleaned_data  # validated data
@@ -90,13 +93,16 @@ class RegForm(Form):
                 email=email_from,
                 username=email_from[:email_from.find('@')],
                 telephone=str(random.randrange(1000000, 9999999)),
-                birth_date='1980-01-01'
+                birth_date='1980-01-01',
             )
+            import uuid
+            str(uuid.uuid4())
 
         student.save()
+        full_path = self.request.build_absolute_uri(reverse('students-confirm', args=[2]))
         message = 'Hello, you need to finish account registration,\n' \
                   'please follow the link to confirm your email:\n' \
-                  f'http://127.0.0.1:8000{reverse("students-confirm", args=[student.pk])}\n'
+                  f'{full_path}\n'
 
         # TODO insert absolute url, not hardcode
         # f'{request.build_absolute_uri(reverse("students-edit", args=[student.pk]))}'
@@ -107,4 +113,3 @@ class RegForm(Form):
             mail_log.write(f'Email: {email_from}\n'
                            f'Subject: {subject}\n'
                            f'Message: {message}\n\n')
-            mail_log.close()

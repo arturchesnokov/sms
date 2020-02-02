@@ -7,8 +7,20 @@ from django.db import models
 
 from teachers.models import Teacher
 
+# from django.contrib.auth.models import AbstractUser
+# class User(AbstractUser):
+#     # role = models.PositiveSmallIntegerField(choices=((1, 'Student'), (2, 'Teacher')))
+#     student = models.ForeignKey(Student)
+#     teacher = models.ForeignKey(Teacher)
+#     '''
+#     signal
+#     if instance.student_id and instance.teacher_id:
+#         raise AttributeError
+#     '''
+
 
 class Student(models.Model):
+    user_hash = models.CharField(max_length=120, default='')
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     birth_date = models.DateField(default='01/01/1980')

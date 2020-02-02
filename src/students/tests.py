@@ -40,8 +40,10 @@ class TestReg(TestCase):
 
         response = self.client.get(reverse('students-confirm', args=[student.pk]))
         student = Student.objects.get(email=test_email)
-        assert student.is_enabled == True
+        student.refresh_from_db()
+        assert student.is_enabled is True
 
+from django.contrib.auth.models import AbstractUser
 
 class StudentListTestResponse(TestCase):
     fixtures = ['db.json']
@@ -56,8 +58,7 @@ class StudentListTestResponse(TestCase):
 
         qs_students = Student.objects.all()
         print(f'QS: {qs_students}')
-
-        self.assertQuerysetEqual(qs_students, students_list)  # можно ли сравнивать кверисет?
+        self.assertQuerysetEqual(qs_students.order_by('id'), map(str, students_list.order_by('id')), transform=str)  # можно ли сравнивать кверисет?
 
 
 class StudentAddPageTestResponse(TestCase):
