@@ -20,7 +20,7 @@ from teachers.models import Teacher
 
 
 class Student(models.Model):
-    user_hash = models.CharField(max_length=120, default='')
+    #user_hash = models.CharField(max_length=120, default='')
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     birth_date = models.DateField(default='01/01/1980')

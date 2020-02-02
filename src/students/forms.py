@@ -95,11 +95,11 @@ class RegForm(Form):
                 telephone=str(random.randrange(1000000, 9999999)),
                 birth_date='1980-01-01',
             )
-            import uuid
-            str(uuid.uuid4())
+            # import uuid
+            # str(uuid.uuid4())
 
         student.save()
-        full_path = self.request.build_absolute_uri(reverse('students-confirm', args=[2]))
+        full_path = self.request.build_absolute_uri(reverse('students-confirm', args=[student.pk]))
         message = 'Hello, you need to finish account registration,\n' \
                   'please follow the link to confirm your email:\n' \
                   f'{full_path}\n'
