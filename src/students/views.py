@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.urls import reverse
 
 from .models import Student, Group
-from students.forms import StudentsAddForm, GroupsAddForm, ContactForm
+from students.forms import StudentsAddForm, GroupsAddForm, ContactForm, RegForm, StudentsEditForm
 
 
 # Student methods
@@ -115,3 +115,36 @@ def contact(request):
         form = ContactForm()  # отображаем форму
 
     return render(request, 'contact.html', context={'form': form})
+
+
+# Reg form methods
+def reg_form(request):
+    if request.method == 'POST':
+        form = RegForm(request.POST, request=request)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = RegForm()  # отображаем форму
+
+    return render(request, 'reg.html', context={'form': form})
+
+
+def students_confirm(request, pk):
+    # get_object_or_404
+    try:
+        student = Student.objects.get(id=pk)
+        student.is_enabled = True  # change the status
+        student.save()
+    except Student.DoesNotExist:
+        return HttpResponseNotFound(f'Student with id {pk} not found')
+
+    if request.method == 'POST':
+        form = StudentsEditForm(request.POST, instance=student)  # обрабатываем данные
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('students'))
+    else:
+        form = StudentsEditForm(instance=student)  # отображаем форму
+
+    return render(request, 'students_confirm.html', context={'form': form, 'pk': pk})

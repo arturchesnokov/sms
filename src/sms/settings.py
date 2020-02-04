@@ -59,7 +59,7 @@ ROOT_URLCONF = 'sms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,3 +124,5 @@ try:
     from sms.settings_local import *
 except ImportError:
     print('settings_local module not found!')
+
+LOGIN_REDIRECT_URL = '/'

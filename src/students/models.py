@@ -7,11 +7,23 @@ from django.db import models
 
 from teachers.models import Teacher
 
+# from django.contrib.auth.models import AbstractUser
+# class User(AbstractUser):
+#     # role = models.PositiveSmallIntegerField(choices=((1, 'Student'), (2, 'Teacher')))
+#     student = models.ForeignKey(Student)
+#     teacher = models.ForeignKey(Teacher)
+#     '''
+#     signal
+#     if instance.student_id and instance.teacher_id:
+#         raise AttributeError
+#     '''
+
 
 class Student(models.Model):
+    #user_hash = models.CharField(max_length=120, default='')
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    birth_date = models.DateField()
+    birth_date = models.DateField(default='01/01/1980')
     email = models.EmailField(unique=True)
     # add avatar TODO
     telephone = models.CharField(unique=True, max_length=25)
@@ -19,6 +31,9 @@ class Student(models.Model):
     group = models.ForeignKey('students.Group',
                               null=True, blank=True,
                               on_delete=models.CASCADE)
+    username = models.CharField(unique=True, max_length=25, default='')
+    password = models.CharField(max_length=25, default='111111')
+    is_enabled = models.BooleanField(default=False)
 
     def get_info(self):
         return f"First Name: {self.first_name}" \
@@ -35,12 +50,14 @@ class Student(models.Model):
         fake.add_provider(phone_number)
         fake.add_provider(profile)
         f_profile = fake.profile()
+        mail = fake.email()
         # groups_list = list(Group.objects.all())
         student = cls(
             first_name=fake.first_name(),
             last_name=fake.last_name(),
             birth_date=f_profile['birthdate'],
-            email=fake.email(),
+            email=mail,
+            username=mail[:mail.find('@')],
             telephone=fake.phone_number(),
             address=fake.address(),
             # group=random.choice(groups_list)
