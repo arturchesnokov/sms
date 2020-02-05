@@ -2,7 +2,7 @@ from django.urls import path
 
 from students.views import (students, generate_student, students_add, students_edit, students_confirm,
                             groups, generate_group, groups_add, groups_edit,
-                            contact, reg_form)
+                            contact, reg_form, admin_logger)
 
 urlpatterns = [
     path('', students, name='students'),
@@ -10,6 +10,8 @@ urlpatterns = [
     path('add/', students_add, name='students-add'),
     path('edit/<int:pk>/', students_edit, name='students-edit'),
     path('confirm/<int:pk>/', students_confirm, name='students-confirm'),
+
+    path('admin-logger/', admin_logger, name='admin-logger'),
 
     path('contact/', contact, name='contact'),
     path('reg/', reg_form, name='reg-form'),

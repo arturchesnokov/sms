@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'debug_toolbar',
+    'silk',
 
     'students',
     'teachers',
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'silk.middleware.SilkyMiddleware',
+    'sms.middleware.LoggerMiddleware',
 ]
 
 ROOT_URLCONF = 'sms.urls'
@@ -126,3 +129,5 @@ except ImportError:
     print('settings_local module not found!')
 
 LOGIN_REDIRECT_URL = '/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

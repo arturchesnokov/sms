@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Admin Logger List{% endblock %}
+{% block content %}
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Path</th>
+        <th>Method</th>
+        <th>Time Delta</th>
+        <th>User ID</th>
+        <th>Created</th>
+    </tr>
+    {% for line in admin_logger %}
+        <tr>
+            <td>{{ line.id }}</td>
+            <td>{{ line.path }}</td>
+            <td>{{ line.method }}</td>
+            <td>{{ line.time_delta }}</td>
+            <td>{{ line.user_id }}</td>
+            <td>{{ line.created }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

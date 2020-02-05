@@ -62,8 +62,6 @@ class ContactForm(Form):
         email_from = data['email']
         recipient_list = [settings.EMAIL_HOST_USER]
 
-        # student = Student.objects.get_or_create(email = email_from)[0]
-
         send_email_async.delay(subject, message, email_from, recipient_list)
 
         with open('mail_log.txt', 'a') as mail_log:
@@ -103,9 +101,6 @@ class RegForm(Form):
         message = 'Hello, you need to finish account registration,\n' \
                   'please follow the link to confirm your email:\n' \
                   f'{full_path}\n'
-
-        # TODO insert absolute url, not hardcode
-        # f'{request.build_absolute_uri(reverse("students-edit", args=[student.pk]))}'
 
         send_email_async.delay(subject, message, email_from, recipient_list)
 

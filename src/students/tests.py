@@ -34,12 +34,9 @@ class TestReg(TestCase):
 
         student = Student.objects.get(email=test_email)
 
-        assert student.email == test_email  # student has been created
-
         assert student.is_enabled == False  # default status of created student
 
         response = self.client.get(reverse('students-confirm', args=[student.pk]))
-        # student = Student.objects.get(email=test_email)
         student.refresh_from_db()
         assert student.is_enabled is True
 
@@ -53,10 +50,8 @@ class StudentListTestResponse(TestCase):
         self.assertEqual(response.status_code, 200, msg='students page response status - FAIL')
 
         students_list = response.context['students']
-        #print('students_list', response.context['students'])
 
         qs_students = Student.objects.all()
-        # print(f'QS: {qs_students}')
         self.assertQuerysetEqual(qs_students.order_by('id'), map(str, students_list.order_by('id')), transform=str)
 
 
