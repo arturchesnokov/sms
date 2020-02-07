@@ -11,7 +11,10 @@ class LoggerMiddleware:
         start_time = time.time()
 
         response = self.get_response(request)
-        full_path = request.build_absolute_uri()
+
+        full_time = time.time() - start_time
+
+        full_path = request.path
 
         # print('--------------')
         # print(request)
@@ -20,10 +23,7 @@ class LoggerMiddleware:
         # print('id:', request.user.pk)
         # print('--------------')
 
-        end_time = time.time()
-        full_time = end_time - start_time
-
-        if '/admin/' in full_path:
+        if full_path.startswith('/admin/'):
             if request.user.pk is None:  # TODO  как избежать вот такого?
                 request.user.pk = 0
             Logger.objects.create(path=full_path,
