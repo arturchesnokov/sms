@@ -7,6 +7,7 @@ from django.db import models
 
 from teachers.models import Teacher
 
+
 # from django.contrib.auth.models import AbstractUser
 # class User(AbstractUser):
 #     # role = models.PositiveSmallIntegerField(choices=((1, 'Student'), (2, 'Teacher')))
@@ -20,7 +21,7 @@ from teachers.models import Teacher
 
 
 class Student(models.Model):
-    #user_hash = models.CharField(max_length=120, default='')
+    # user_hash = models.CharField(max_length=120, default='')
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     birth_date = models.DateField(default='01/01/1980')
@@ -113,3 +114,11 @@ class Group(models.Model):
 
     def __str__(self):
         return self.group_name
+
+
+class Logger(models.Model):
+    path = models.CharField(max_length=250)
+    method = models.CharField(max_length=50)
+    time_delta = models.CharField(max_length=50)
+    user_id = models.IntegerField()
+    created = models.DateTimeField(auto_now=True)

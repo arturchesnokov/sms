@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.db.models import Q
 from django.urls import reverse
 
-from .models import Student, Group
+from .models import Student, Group, Logger
 from students.forms import StudentsAddForm, GroupsAddForm, ContactForm, RegForm, StudentsEditForm
 
 
@@ -148,3 +148,8 @@ def students_confirm(request, pk):
         form = StudentsEditForm(instance=student)  # отображаем форму
 
     return render(request, 'students_confirm.html', context={'form': form, 'pk': pk})
+
+
+def admin_logger(request):
+    queryset = Logger.objects.all()
+    return render(request, 'admin_logger_template.html', context={'admin_logger': queryset})

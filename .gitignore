@@ -7,4 +7,5 @@ env/
 .idea/
 settings_local.py
 src/mail_log.txt
+static/
 

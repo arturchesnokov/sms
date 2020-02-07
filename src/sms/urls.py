@@ -27,10 +27,10 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='base.html')),
     path('students/', include('students.urls')),
     path('teachers/', include('teachers.urls')),
+    path('silk/', include('silk.urls', namespace='silk')),
 ]
 
 if settings.DEBUG:
     urlpatterns = [
                       path('__debug__/', include(debug_toolbar.urls)),
                   ] + urlpatterns
-
