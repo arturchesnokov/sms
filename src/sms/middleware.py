@@ -1,6 +1,7 @@
 import time
 
 from students.models import Logger
+from students.tasks import logger_write_db
 
 
 class LoggerMiddleware:
@@ -26,9 +27,7 @@ class LoggerMiddleware:
         if full_path.startswith('/admin/'):
             if request.user.pk is None:  # TODO  как избежать вот такого?
                 request.user.pk = 0
-            Logger.objects.create(path=full_path,
-                                  method=request.method,
-                                  time_delta=full_time,
-                                  user_id=int(request.user.pk))
+
+            logger_write_db.delay(full_path, request.method, full_time, int(request.user.pk))
 
         return response
