@@ -10,6 +10,7 @@ from students.models import Logger
 def send_email_async(subject, message, email_from, recipient_list):
     send_mail(subject, message, email_from, recipient_list)
 
+
 @shared_task
 def logger_write_db(path, method, time, user_id):
     Logger.objects.create(path=path,
