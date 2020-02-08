@@ -13,7 +13,7 @@ def send_email_async(subject, message, email_from, recipient_list):
 
 
 @task
-def clean_old_data(days):
+def clean_old_logs(days):
     now = datetime.now(timezone.utc)
     Logger.objects.filter(created__lte=now - timedelta(days=days)).delete()
     # queryset = Logger.objects.all()

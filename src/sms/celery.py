@@ -29,8 +29,8 @@ app.conf.task_serializer = 'json'
 app.conf.timezone = 'UTC'
 
 app.conf.beat_schedule = {
-    'cleaning-old-data': {
-        'task': 'students.tasks.clean_old_data',
+    'cleaning-old-logs': {
+        'task': 'students.tasks.clean_old_logs',
         'schedule': crontab(minute=0, hour=0),  # every day at midnight
         'args': (2,)  # days - logger data older then this q-ty of days will  be removed
     }
