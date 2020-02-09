@@ -34,7 +34,7 @@ class TestReg(TestCase):
 
         student = Student.objects.get(email=test_email)
 
-        assert student.is_enabled == False  # default status of created student
+        assert student.is_enabled is False  # default status of created student
 
         response = self.client.get(reverse('students-confirm', args=[student.pk]))
         student.refresh_from_db()

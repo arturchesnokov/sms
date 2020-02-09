@@ -1,8 +1,6 @@
 from django.forms import ModelForm, Form, EmailField, CharField, ValidationError
-from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
-from django.http import request
 
 from students.models import Student, Group
 from students.tasks import send_email_async

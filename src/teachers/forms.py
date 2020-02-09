@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Form, EmailField, CharField, ValidationError
+from django.forms import ModelForm, ValidationError
 
 from teachers.models import Teacher
 
